@@ -9,8 +9,6 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public GameObject sprite;
     public float rotSpeed = 3;
-    //private float angleTo = -90;
-    //private float angle = -90;
     Vector2 prevpos;
     Rigidbody2D rb;
     public GameObject bloodSplash;
@@ -44,35 +42,20 @@ public class PlayerController : MonoBehaviour
         if (!dead)
         {
             movement = Vector2.zero;
-            if (Input.GetAxis("Horizontal") != 0)
-            {
-                movement.x = Input.GetAxis("Horizontal");
-                //movement.y = 0;
-            }
+            if (Input.GetAxis("Horizontal") != 0)            
+                movement.x = Input.GetAxis("Horizontal");              
+            
 
-            if (Input.GetAxis("Vertical") != 0)
-            {
+            if (Input.GetAxis("Vertical") != 0)            
                 movement.y = Input.GetAxis("Vertical");
-                //movement.x = 0;
-            }
+                            
 
             AnimatorEnable();
 
-            //if (movement.x<0)
-            //    angleTo = 90;
-            //if (movement.y<0)
-            //    angleTo = 180;
-            //if (movement.x>0)
-            //    angleTo = -90;
-            //if (movement.y>0)
-            //    angleTo = 0;
-
-            //angle = Mathf.Lerp(angle, angleTo, Time.deltaTime * rotSpeed);
             Vector2 movedir = rb.position - prevpos;
             if (movedir.magnitude * 100 > 1)
                 sprite.transform.rotation = Quaternion.Lerp(sprite.transform.rotation, Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(movedir.y * 100, movedir.x * 100) - 90), rotSpeed * Time.deltaTime);
 
-            //Debug.DrawRay(rb.position, (rb.position - prevpos)*100);
             if (GameObject.Find("Reflection").GetComponent<ReflectPosition>().refInside == true && GameObject.Find("Player").GetComponent<PlayerController>().playerInside == true)
                 StartCoroutine(ChangeScene());
 
@@ -82,8 +65,6 @@ public class PlayerController : MonoBehaviour
                 onceOnly = true;
             }
 
-            /*Debug.Log(GameObject.Find("Reflection").GetComponent<ReflectPosition>().refInside + "ref");
-            Debug.Log(GameObject.Find("Player").GetComponent<PlayerController>().playerInside + "pl");*/
         }
     }
 
@@ -176,16 +157,18 @@ public class PlayerController : MonoBehaviour
 
 
     }
+    void DieOnCollision()
+    {
+        bloodSplash.SetActive(true);
+        dead = true;
+        GetComponentInChildren<Animator>().Play("New State");
+        StartCoroutine(Death());
+        movement = Vector3.zero;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Death"))
-        {
-            bloodSplash.SetActive(true);
-            dead = true;
-            GetComponentInChildren<Animator>().Play("New State");
-            StartCoroutine(Death());
-            movement = Vector3.zero;
-        }
+            DieOnCollision();
     }
 }
