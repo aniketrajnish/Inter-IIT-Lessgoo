@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Death
+  - GameEnd
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Reflection
+  - Player
+  - PP
+  - GameEnd
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BG
+    uniqueID: 818927917
+    locked: 0
+  - name: Reflection
+    uniqueID: 3796736187
+    locked: 0
+  - name: WalkableFG
+    uniqueID: 2914163941
+    locked: 0
+  - name: Player
+    uniqueID: 1333982365
+    locked: 0
+  - name: FG
+    uniqueID: 3776961473
+    locked: 0
