@@ -7,6 +7,7 @@ public class TSIReflect : MonoBehaviour
     Rigidbody2D rb;
     Vector2 movement;
     Vector2 prevpos;
+    Animator anim;
 
     [Header("Assign These:")]
     public GameObject sprite;
@@ -15,6 +16,7 @@ public class TSIReflect : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
     }
     void Update()
     {
@@ -33,7 +35,14 @@ public class TSIReflect : MonoBehaviour
             sprite.transform.rotation = Quaternion.Lerp(sprite.transform.rotation,
                 Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(movedir.y * 100, movedir.x * 100) - 90),
                 rotSpeed * Time.deltaTime / Time.timeScale);
-        
+
+        if (TSIController.tsiInstance.isSlowMo)
+            anim.Play("GirlWalk");
+        else
+            anim.Play("New State");
+
+        anim.speed = 1 / Time.timeScale;
+
         prevpos = rb.position;
     }
 }

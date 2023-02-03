@@ -8,6 +8,7 @@ public class TSIController : MonoBehaviour
     Vector2 movement;
     Vector2 prevpos;
     [HideInInspector] public bool isSlowMo;
+    Animator anim;
 
     [Header("Assign These:")]
     public GameObject sprite;
@@ -18,6 +19,7 @@ public class TSIController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         tsiInstance = this;
+        anim = GetComponentInChildren<Animator>();
     }
     void Update()
     {
@@ -38,6 +40,14 @@ public class TSIController : MonoBehaviour
                 rotSpeed * Time.deltaTime / Time.timeScale);
 
         isSlowMo = (movX != 0 || movY != 0) ? true : false;
+
+        if (isSlowMo)
+            anim.Play("PlayerWalk");
+        else
+            anim.Play("New State");
+
+        anim.speed = 1 / Time.timeScale;
+
         prevpos = rb.position;
     }
 }

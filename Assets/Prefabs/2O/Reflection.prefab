@@ -220,7 +220,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2985946003279328698}
   - component: {fileID: 2985946003279328703}
-  - component: {fileID: 2985946003279328699}
   - component: {fileID: 2985946003279328696}
   - component: {fileID: 2985946003279328697}
   - component: {fileID: 347979107}
@@ -274,26 +273,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
---- !u!114 &2985946003279328699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2985946003279328702}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f3639977d787d747bb61f3eb1863bc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  sprite: {fileID: 6610553240056339111}
-  bloodSplash: {fileID: 5420339981956490273}
-  rotSpeed: 6
-  once: 0
-  hasWon: 0
-  refInside: 0
-  gameEnd: 0
 --- !u!50 &2985946003279328696
 Rigidbody2D:
   serializedVersion: 4
@@ -480,7 +459,7 @@ MonoBehaviour:
   m_UseNormalMap: 1
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
-  m_ShadowIntensity: 1
+  m_ShadowIntensity: 0.5
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360

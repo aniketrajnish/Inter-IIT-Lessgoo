@@ -48,8 +48,7 @@ public class TimeControl : MonoBehaviour
 
         foreach (Transform Vignette in Vignettes)
             Vignette.localScale = Vector3.Lerp(Vignette.localScale, scale, lerpTime * Time.unscaledDeltaTime * 3f);
-        print(Time.timeScale);
-
+       
     }
     public IEnumerator Yeet(float time)
     {
