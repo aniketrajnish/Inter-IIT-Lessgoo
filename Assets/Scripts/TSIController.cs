@@ -28,14 +28,14 @@ public class TSIController : MonoBehaviour
 
         movement = new Vector2(movX, movY);
 
-        rb.MovePosition(rb.position + movement.normalized * speed * Time.unscaledDeltaTime);        
+        rb.MovePosition(rb.position + movement.normalized * speed * Time.deltaTime / Time.timeScale);        
 
         Vector2 movedir = rb.position - prevpos;
 
         if (movedir.magnitude > 0)
             sprite.transform.rotation = Quaternion.Lerp(sprite.transform.rotation,
                 Quaternion.Euler(0, 0, Mathf.Rad2Deg * Mathf.Atan2(movedir.y * 100, movedir.x * 100) - 90),
-                rotSpeed * Time.unscaledDeltaTime);
+                rotSpeed * Time.deltaTime / Time.timeScale);
 
         isSlowMo = (movX != 0 || movY != 0) ? true : false;
         prevpos = rb.position;
