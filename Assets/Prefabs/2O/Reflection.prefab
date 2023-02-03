@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 2985946003279328699}
   - component: {fileID: 2985946003279328696}
   - component: {fileID: 2985946003279328697}
+  - component: {fileID: 347979107}
   m_Layer: 0
   m_Name: Reflection
   m_TagString: Untagged
@@ -410,6 +411,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &347979107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985946003279328702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9864a671234722845bda2aae8ff71970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 6610553240056339111}
+  rotSpeed: 12
+  speed: 4
 --- !u!1 &2985946003874287839
 GameObject:
   m_ObjectHideFlags: 0
