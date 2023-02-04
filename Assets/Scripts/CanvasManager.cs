@@ -25,7 +25,7 @@ public class CanvasManager : MonoBehaviour
             canvases[i] = transform.GetChild(i).gameObject;
         }
     }
-    GameObject FindCanvas(string _cName)
+    public GameObject FindCanvas(string _cName)
     {       
         foreach (GameObject canvas in canvases)
         {

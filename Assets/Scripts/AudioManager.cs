@@ -7,11 +7,29 @@ public class AudioManager : MonoBehaviour
 {
     AudioSource aud;
     public AudioClip[] clips;
-    public static AudioManager amInstance; 
+    public static AudioManager instance = null;
+    public static AudioManager Instance
+    {
+        get { return instance; }
+    }
+
+    void Awake()
+    {   
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+    }
     void Start()
     {
         aud = GetComponent<AudioSource>();
-        amInstance = this;
     }
     public void PlayAud(string _clipName, bool _loop)
     {
@@ -29,13 +47,10 @@ public class AudioManager : MonoBehaviour
         {
             if (EventSystem.current.IsPointerOverGameObject())
             {
-                if (EventSystem.current.IsPointerOverGameObject())
-                {
-                    GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
+                GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
 
-                    if (selectedObject != null && selectedObject.GetComponent<Button>() != null)
-                        PlayAud("Click", false);
-                }
+                if (selectedObject != null && selectedObject.GetComponent<Button>() != null)
+                    PlayAud("Click", false);
             }
         }
     }

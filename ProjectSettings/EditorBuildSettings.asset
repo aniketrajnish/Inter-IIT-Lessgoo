@@ -6,39 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/2O/MainMenu.unity
-    guid: e4a4ad5e31c1d5f48830741cb95d0f9d
-  - enabled: 1
-    path: Assets/Scenes/Level 1.unity
-    guid: 516cfa11efa8a6b4a91b965a7a343149
-  - enabled: 1
-    path: Assets/Scenes/Level 2.unity
-    guid: 0b95e15e502da9b4db8ebdbfb9ccf301
-  - enabled: 1
-    path: Assets/Scenes/Level 3.unity
-    guid: ec4bde1b241af864b9ebe64d110baf90
-  - enabled: 1
-    path: Assets/Scenes/Level 4.unity
-    guid: 0ad578b631ebfc648bbbb3c20a75bcc5
-  - enabled: 1
-    path: Assets/Scenes/Level 5.unity
-    guid: 99ed5000983f1ae45b1355e840b6da15
-  - enabled: 1
-    path: Assets/Scenes/Level 6.unity
-    guid: 76654a81def5dc842a706653ccd7714c
-  - enabled: 1
-    path: Assets/Scenes/2O/Level 7.unity
-    guid: 4c8aadb6507fcd94bac2f4116a89be56
-  - enabled: 1
-    path: Assets/Scenes/Level 8.unity
-    guid: 8c6a3a1b4cb34474fb6105fa06d76a4d
-  - enabled: 1
-    path: Assets/Scenes/Level 9.unity
-    guid: f0d1e5f8680baea45bbfa999c42588a9
-  - enabled: 1
-    path: Assets/Scenes/Level 10.unity
-    guid: 0b6bb0aae5e16f648b57220278d8f926
-  - enabled: 1
-    path: Assets/Scenes/Level 11.unity
-    guid: e668d9466a52a2e4c9503dd8503c9d39
+    path: Assets/Scenes/Test/Aniket.unity
+    guid: 37ec32c27d1a8d24098ec076d5a807d9
   m_configObjects: {}
