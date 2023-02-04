@@ -53,14 +53,19 @@ public class TSIController : MonoBehaviour
             parts[0].Play();
             aud.enabled = true;
             if (!isAudPlaying)
-                aud.time = Random.Range(0, aud.clip.length-1);
+            {
+                aud.time = Random.Range(0, aud.clip.length - 1);
+                AudioManager.amInstance.PlayAud("Footsteps", true);
+            }
             isAudPlaying = true;
+            
         }
         else
         {
             anim.Play("New State");
             parts[0].Pause();
             aud.enabled = false;
+            AudioManager.amInstance.GetComponent<AudioSource>().Stop();
             isAudPlaying = false;
         }
 

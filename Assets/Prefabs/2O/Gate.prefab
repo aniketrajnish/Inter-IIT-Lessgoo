@@ -50,6 +50,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -287,6 +288,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -347,7 +349,7 @@ MonoBehaviour:
   - {x: -0.2124424, y: 2.5513654, z: 0}
   m_ShapePathHash: 1972534844
   m_Mesh: {fileID: 0}
-  m_InstanceId: 84952
+  m_InstanceId: -254538
 --- !u!61 &3297600033279668159
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -422,6 +424,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -557,6 +560,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -617,7 +621,7 @@ MonoBehaviour:
   - {x: -0.2124424, y: 2.5513654, z: 0}
   m_ShapePathHash: 1972534844
   m_Mesh: {fileID: 0}
-  m_InstanceId: 84898
+  m_InstanceId: -254528
 --- !u!61 &3297600033546838180
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -749,6 +753,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -884,6 +889,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -944,7 +950,7 @@ MonoBehaviour:
   - {x: -0.2124424, y: 2.5513654, z: 0}
   m_ShapePathHash: 1972534844
   m_Mesh: {fileID: 0}
-  m_InstanceId: 84802
+  m_InstanceId: -254508
 --- !u!61 &3297600033910911610
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1019,6 +1025,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1079,7 +1086,7 @@ MonoBehaviour:
   - {x: -0.2124424, y: 2.5513654, z: 0}
   m_ShapePathHash: 1972534844
   m_Mesh: {fileID: 0}
-  m_InstanceId: 84830
+  m_InstanceId: -254518
 --- !u!61 &3297600033984956960
 BoxCollider2D:
   m_ObjectHideFlags: 0
