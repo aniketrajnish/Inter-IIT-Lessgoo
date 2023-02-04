@@ -7,6 +7,8 @@ public class TimeControl : MonoBehaviour
     bool yeet;
     private Vector3 originalVignetteScale;
     private Vector3 sloMoVignetteScale;
+    AudioSource aud;
+    float maxVol;
 
     [Header("Assign These:")]
     public float minTimeScale;
@@ -15,14 +17,31 @@ public class TimeControl : MonoBehaviour
     public float SlowFOV, regularFOV;
     Camera[] cams;
     public Transform[] Vignettes;
-    public float scaleFactor = 10.0f;    
+    public float scaleFactor;
+    public AudioClip[] clips;
     void Start()
     {
+        PlayAud();
         tcInstance = this;
         cams = Camera.allCameras;
+
         originalVignetteScale = Vignettes[0].localScale;
         sloMoVignetteScale = originalVignetteScale;
         originalVignetteScale = scaleFactor * sloMoVignetteScale;
+    }
+
+    void PlayAud()
+    {
+        aud = GetComponent<AudioSource>();
+        int clipIndex = Random.Range(0, clips.Length);
+        aud.clip = clips[clipIndex];
+
+        if (clipIndex == 0)
+            maxVol = .01f;
+        else
+            maxVol = .05f;       
+
+        aud.Play();        
     }
 
     // Update is called once per frame
@@ -48,7 +67,9 @@ public class TimeControl : MonoBehaviour
 
         foreach (Transform Vignette in Vignettes)
             Vignette.localScale = Vector3.Lerp(Vignette.localScale, scale, lerpTime * Time.unscaledDeltaTime * 3f);
-       
+
+        aud.volume = (float)System.Math.Pow(Time.timeScale, 1) * maxVol;
+        print(Time.timeScale);
     }
     public IEnumerator Yeet(float time)
     {

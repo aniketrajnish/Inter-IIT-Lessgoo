@@ -9,6 +9,8 @@ public class TSIController : MonoBehaviour
     Vector2 prevpos;
     [HideInInspector] public bool isSlowMo;
     Animator anim;
+    ParticleSystem[] parts;   
+    bool isAudPlaying;
 
     [Header("Assign These:")]
     public GameObject sprite;
@@ -17,8 +19,10 @@ public class TSIController : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         tsiInstance = this;
+
+        rb = GetComponent<Rigidbody2D>();
+        parts = GetComponentsInChildren<ParticleSystem>();
         anim = GetComponentInChildren<Animator>();
     }
     void Update()
@@ -41,10 +45,24 @@ public class TSIController : MonoBehaviour
 
         isSlowMo = (movX != 0 || movY != 0) ? true : false;
 
+        AudioSource aud = GetComponent<AudioSource>();
+
         if (isSlowMo)
+        {
             anim.Play("PlayerWalk");
+            parts[0].Play();
+            aud.enabled = true;
+            if (!isAudPlaying)
+                aud.time = Random.Range(0, aud.clip.length-1);
+            isAudPlaying = true;
+        }
         else
+        {
             anim.Play("New State");
+            parts[0].Pause();
+            aud.enabled = false;
+            isAudPlaying = false;
+        }
 
         anim.speed = 1 / Time.timeScale;
 

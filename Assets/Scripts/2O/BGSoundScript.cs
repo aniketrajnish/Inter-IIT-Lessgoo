@@ -4,13 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class BGSoundScript : MonoBehaviour {
+public class BGSoundScript : MonoBehaviour
+{
 
     private void Start()
     {
-        GetComponent<AudioSource>().time = 10f;
+        //GetComponent<AudioSource>().time = 10f;
     }
-
+    private void Update()
+    {
+        GetComponent<AudioSource>().volume = (float)System.Math.Pow(Time.timeScale, .7f) * .05f;
+    }
     /*float time;
     
 	void Start () 

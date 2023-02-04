@@ -8,6 +8,7 @@ public class TSIReflect : MonoBehaviour
     Vector2 movement;
     Vector2 prevpos;
     Animator anim;
+    ParticleSystem[] parts;
 
     [Header("Assign These:")]
     public GameObject sprite;
@@ -17,6 +18,7 @@ public class TSIReflect : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
+        parts = GetComponentsInChildren<ParticleSystem>();
     }
     void Update()
     {
@@ -37,9 +39,15 @@ public class TSIReflect : MonoBehaviour
                 rotSpeed * Time.deltaTime / Time.timeScale);
 
         if (TSIController.tsiInstance.isSlowMo)
+        {
             anim.Play("GirlWalk");
+            parts[0].Play();
+        }
         else
+        {
             anim.Play("New State");
+            parts[0].Pause();
+        }
 
         anim.speed = 1 / Time.timeScale;
 
