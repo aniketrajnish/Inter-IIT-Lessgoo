@@ -69,7 +69,7 @@ public class TimeControl : MonoBehaviour
             Vignette.localScale = Vector3.Lerp(Vignette.localScale, scale, lerpTime * Time.unscaledDeltaTime * 3f);
 
         aud.volume = (float)System.Math.Pow(Time.timeScale, 1) * maxVol;
-        print(Time.timeScale);
+        //print(Time.timeScale);
     }
     public IEnumerator Yeet(float time)
     {

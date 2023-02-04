@@ -13,7 +13,9 @@ public class CanvasManager : MonoBehaviour
         GetAllCanvases(canvases);
 
         foreach (GameObject canvas in canvases)
-            canvas.SetActive(false);        
+            canvas.SetActive(false);
+
+        //canvases[1].SetActive(true);
     }
     void GetAllCanvases(GameObject[] _canvases)
     {
@@ -24,13 +26,15 @@ public class CanvasManager : MonoBehaviour
         }
     }
     GameObject FindCanvas(string _cName)
-    {
-        GameObject go= new GameObject();
+    {       
         foreach (GameObject canvas in canvases)
         {
             if (canvas.name == _cName)
-                go = canvas;
+            {
+                return canvas;
+            }                
         }
+        GameObject go = new GameObject();
         return go;
     }
     // Update is called once per frame

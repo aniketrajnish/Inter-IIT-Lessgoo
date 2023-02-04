@@ -15,12 +15,11 @@ public class TSIController : MonoBehaviour
     [Header("Assign These:")]
     public GameObject sprite;
     public float rotSpeed, speed;
-    public static TSIController tsiInstance;
+    public static TSIController tsiInstance;   
 
     void Start()
     {
         tsiInstance = this;
-
         rb = GetComponent<Rigidbody2D>();
         parts = GetComponentsInChildren<ParticleSystem>();
         anim = GetComponentInChildren<Animator>();
@@ -55,7 +54,7 @@ public class TSIController : MonoBehaviour
             if (!isAudPlaying)
             {
                 aud.time = Random.Range(0, aud.clip.length - 1);
-                AudioManager.amInstance.PlayAud("Footsteps", true);
+                //AudioManager.amInstance.PlayAud("Footsteps", true);
             }
             isAudPlaying = true;
             
@@ -65,7 +64,7 @@ public class TSIController : MonoBehaviour
             anim.Play("New State");
             parts[0].Pause();
             aud.enabled = false;
-            AudioManager.amInstance.GetComponent<AudioSource>().Stop();
+            //AudioManager.amInstance.GetComponent<AudioSource>().Stop();
             isAudPlaying = false;
         }
 

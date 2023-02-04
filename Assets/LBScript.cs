@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class LeaderboadScript : MonoBehaviour
+public class LBScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timer;
     float timeElapsed;
-    float targetTime = 100;    
+    float targetTime = 100;
     void Start()
     {
-        
-    }    
+        timeElapsed = 0;
+    }
     void Update()
     {
         Clock(timer);
+        print(timeElapsed);
     }
     void Clock(TextMeshProUGUI _timer)
     {
