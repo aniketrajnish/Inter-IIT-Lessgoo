@@ -1,0 +1,852 @@
+fileFormatVersion: 2
+guid: d26b8bff6b3186145a8a9a1d82e55bea
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7136753671324192687
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_0
+  - first:
+      213: -5468136768540128152
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_1
+  - first:
+      213: -9093108606372890826
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_2
+  - first:
+      213: 1009170125074567399
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_3
+  - first:
+      213: -6073795205024750417
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_4
+  - first:
+      213: 6084634964298071196
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_5
+  - first:
+      213: 2257536106005661383
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_6
+  - first:
+      213: -7791310412989190826
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_7
+  - first:
+      213: -8285917489132599105
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_8
+  - first:
+      213: 296559222952643499
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_9
+  - first:
+      213: -3266523280485102777
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_10
+  - first:
+      213: 4388305752155423105
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_11
+  - first:
+      213: 1081224399861709772
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_12
+  - first:
+      213: 972338126750568676
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_13
+  - first:
+      213: -149273005717668690
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_14
+  - first:
+      213: 4342076866498632693
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_15
+  - first:
+      213: 2734190554556113027
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_16
+  - first:
+      213: -124086198925331541
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_17
+  - first:
+      213: 6767783436585397937
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_18
+  - first:
+      213: 1878274621433539627
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_19
+  - first:
+      213: -7244312606412405478
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_20
+  - first:
+      213: -3648600487070175787
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_21
+  - first:
+      213: -3296665997525194891
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_22
+  - first:
+      213: 7877303221297962880
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_23
+  - first:
+      213: -2226204814073948928
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_24
+  - first:
+      213: -6128983321706174629
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_25
+  - first:
+      213: -6745914384111130366
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_26
+  - first:
+      213: -1720728097997022511
+    second: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_27
+  - first:
+      213: 8647823593821616703
+    second: Bat_0
+  - first:
+      213: 5681806813702538305
+    second: Bat_1
+  - first:
+      213: 697682191857345388
+    second: Bat_2
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 325
+        width: 72
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150b14b195825fc90800000000000000
+      internalID: -7136753671324192687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 325
+        width: 112
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86cc9e794964d14b0800000000000000
+      internalID: -5468136768540128152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_2
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 325
+        width: 128
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637b81d56e9cec180800000000000000
+      internalID: -9093108606372890826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 325
+        width: 107
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e09107c1ea410e00800000000000000
+      internalID: 1009170125074567399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_4
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 322
+        width: 87
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa4670ef07b85bba0800000000000000
+      internalID: -6073795205024750417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_5
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 322
+        width: 82
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c78e22347f07450800000000000000
+      internalID: 6084634964298071196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_6
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 323
+        width: 82
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c60612a021645f10800000000000000
+      internalID: 2257536106005661383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 221
+        width: 68
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d2af2a574bfd390800000000000000
+      internalID: -7791310412989190826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_8
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 253
+        width: 89
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb80e0eb1f1820d80800000000000000
+      internalID: -8285917489132599105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_9
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 253
+        width: 100
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab45f2ca079d1400800000000000000
+      internalID: 296559222952643499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_10
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 253
+        width: 102
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b4428126afaa2d0800000000000000
+      internalID: -3266523280485102777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_11
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 216
+        width: 93
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1810703d4d466ec30800000000000000
+      internalID: 4388305752155423105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_12
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 217
+        width: 101
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccbfd34fcd7410f00800000000000000
+      internalID: 1081224399861709772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 122
+        width: 94
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e05986ef507e7d00800000000000000
+      internalID: 972338126750568676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_14
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 110
+        width: 77
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eacb4affdfcadedf0800000000000000
+      internalID: -149273005717668690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_15
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 109
+        width: 67
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb971f97e7224c30800000000000000
+      internalID: 4342076866498632693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_16
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 108
+        width: 60
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380ab80b2dbc1f520800000000000000
+      internalID: 2734190554556113027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_17
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 108
+        width: 169
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba3f68f6248274ef0800000000000000
+      internalID: -124086198925331541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_18
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 145
+        width: 118
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bee176ad2ffbed50800000000000000
+      internalID: 6767783436585397937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_19
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 145
+        width: 116
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c6d2111d8f01a10800000000000000
+      internalID: 1878274621433539627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 104
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1587e40118077b90800000000000000
+      internalID: -7244312606412405478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_21
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 86
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dd6dd820319d5dc0800000000000000
+      internalID: -3648600487070175787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_22
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 0
+        width: 92
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577e662edb3ef32d0800000000000000
+      internalID: -3296665997525194891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_23
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 8
+        width: 105
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f51854b8dc15d60800000000000000
+      internalID: 7877303221297962880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_24
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 18
+        width: 117
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0059bdb348eea11e0800000000000000
+      internalID: -2226204814073948928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_25
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 37
+        width: 124
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57e863442a71faa0800000000000000
+      internalID: -6128983321706174629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_26
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 13
+        width: 113
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 209abd9eb92b162a0800000000000000
+      internalID: -6745914384111130366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toppng.com-vector-download-image-png-dreamfields-wiki-fandom-powered-bat-sprite-1077x555_27
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 1
+        width: 94
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1da9ad369eebe18e0800000000000000
+      internalID: -1720728097997022511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bat_0
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 323
+        width: 69
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3abafd8dbd330870800000000000000
+      internalID: 8647823593821616703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bat_1
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 253
+        width: 101
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144422d8135d9de40800000000000000
+      internalID: 5681806813702538305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bat_2
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 233
+        width: 92
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63e5cbc14aaea900800000000000000
+      internalID: 697682191857345388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
