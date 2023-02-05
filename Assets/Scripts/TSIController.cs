@@ -15,9 +15,12 @@ public class TSIController : MonoBehaviour
     [Header("Assign These:")]
     public GameObject sprite;
     public float rotSpeed, speed;
-    public static TSIController tsiInstance;   
-
-    void Start()
+    public static TSIController tsiInstance;
+    private void OnDisable()
+    {
+        parts[0].Pause();
+    }   
+    void Awake()
     {
         tsiInstance = this;
         rb = GetComponent<Rigidbody2D>();

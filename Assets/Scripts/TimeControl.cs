@@ -47,7 +47,8 @@ public class TimeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimeScaleController(TSIController.tsiInstance.isSlowMo);
+        if(TSIController.tsiInstance != null)
+            TimeScaleController(TSIController.tsiInstance.isSlowMo);
     }
     void TimeScaleController (bool _isSlowMo)
     {
