@@ -19,6 +19,7 @@ public class TSIReflect : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         parts = GetComponentsInChildren<ParticleSystem>();
+        parts[0].Pause();
     }
     void Update()
     {

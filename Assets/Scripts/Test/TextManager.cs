@@ -16,7 +16,7 @@ public class TextManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        Invoke("OL", .1f);
+        Invoke("OnLoad", .1f);
     }
     public void OnLoad()
     {
