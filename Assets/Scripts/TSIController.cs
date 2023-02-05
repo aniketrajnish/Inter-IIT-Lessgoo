@@ -24,6 +24,7 @@ public class TSIController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         parts = GetComponentsInChildren<ParticleSystem>();
         anim = GetComponentInChildren<Animator>();
+        parts[0].Pause();
     }
     void Update()
     {

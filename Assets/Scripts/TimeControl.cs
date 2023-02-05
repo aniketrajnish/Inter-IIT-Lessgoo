@@ -28,6 +28,7 @@ public class TimeControl : MonoBehaviour
         originalVignetteScale = Vignettes[0].localScale;
         sloMoVignetteScale = originalVignetteScale;
         originalVignetteScale = scaleFactor * sloMoVignetteScale;
+        aud.volume = (float)System.Math.Pow(Time.timeScale, 1) * maxVol;
     }
 
     void PlayAud()
