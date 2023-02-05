@@ -53,4 +53,21 @@ public class TSIReflect : MonoBehaviour
 
         prevpos = rb.position;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "UI")
+        {
+            AudioSource source = collision.gameObject.GetComponent<AudioSource>();
+            if (!source.isPlaying)
+                StartCoroutine(DisableAudioSource(source));
+        }
+    }
+
+    IEnumerator DisableAudioSource(AudioSource source)
+    {
+        source.Play();
+        yield return new WaitForSecondsRealtime(source.clip.length);
+        source.enabled = false;
+    }
 }
