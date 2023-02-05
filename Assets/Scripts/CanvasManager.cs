@@ -15,7 +15,7 @@ public class CanvasManager : MonoBehaviour
         foreach (GameObject canvas in canvases)
             canvas.SetActive(false);
 
-        //canvases[1].SetActive(true);
+        FindCanvas("CanvasMenu").SetActive(true);
     }
     void GetAllCanvases(GameObject[] _canvases)
     {

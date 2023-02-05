@@ -5,9 +5,10 @@ using TMPro;
 
 public class LBScript : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timer;
+    [SerializeField] TextMeshProUGUI timer, finalScore, time;
     float timeElapsed;
     float targetTime = 100;
+    public bool scoreAssigned;
     void Start()
     {
         timeElapsed = 0;
@@ -16,6 +17,16 @@ public class LBScript : MonoBehaviour
     {
         Clock(timer);
         print(timeElapsed);
+        if (!scoreAssigned && GameManager.instance.levelFinished)
+        {
+            Time.timeScale = 0;
+            int score = AssignScore(timeElapsed);
+            finalScore.text = "Score: " + score.ToString();
+            CanvasManager.cmInstance.FindCanvas("CanvasScore").SetActive(true);
+            time.text = "Time Elapsed: " + timer.text;
+            timer.gameObject.SetActive(false);
+            scoreAssigned = true;
+        }
     }
     void Clock(TextMeshProUGUI _timer)
     {
