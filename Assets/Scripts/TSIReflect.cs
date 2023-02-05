@@ -58,7 +58,15 @@ public class TSIReflect : MonoBehaviour
     {
         if (collision.gameObject.tag == "UI")
         {
-            AudioSource source = collision.gameObject.GetComponent<AudioSource>();
+            AudioSource source;
+            if(collision.gameObject.GetComponent<AudioSource>() != null)
+            {
+                source = collision.gameObject.GetComponent<AudioSource>();
+            }
+            else
+            {
+                source = collision.GetComponentInParent<AudioSource>();
+            }
             if (!source.isPlaying)
                 StartCoroutine(DisableAudioSource(source));
         }

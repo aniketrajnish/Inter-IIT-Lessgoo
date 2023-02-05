@@ -20,7 +20,7 @@ public class LBScript : MonoBehaviour
         if (!GameManager.instance.isPaused)
         {
             Clock(timer);
-            print(timeElapsed);
+            //print(timeElapsed);
             if (!scoreAssigned && GameManager.instance.levelFinished)
             {
                 GameManager.instance.PauseSettings();
