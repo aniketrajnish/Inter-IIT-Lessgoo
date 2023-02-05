@@ -31,6 +31,20 @@ public class GameManager : MonoBehaviour
         CanvasManager.cmInstance.FindCanvas("Leaderboard").SetActive(true);
         CanvasManager.cmInstance.FindCanvas("CanvasMenu").SetActive(false);
     }
+    public void ShowLeaderboard()
+    {
+        PauseSettings();
+        
+        
+        foreach (GameObject canvas in CanvasManager.cmInstance.canvases)
+            canvas.SetActive(false);
+
+        GameObject lb = CanvasManager.cmInstance.FindCanvas("Leaderboard");
+
+        lb.SetActive(true);
+        lb.transform.GetChild(0).gameObject.SetActive(false);
+        lb.transform.GetChild(1).gameObject.SetActive(true);
+    }
     public void Quit()
     {
         Invoke("ActuallyQuit", .25f);
@@ -60,6 +74,7 @@ public class GameManager : MonoBehaviour
     }
     void PlaySettings()
     {
+        Invoke("OL", .1f);
         isPaused = false;
         Time.timeScale = 1;
         GameObject.FindObjectOfType<TSIController>().GetComponent<TSIController>().enabled = true;
@@ -67,11 +82,17 @@ public class GameManager : MonoBehaviour
     }
     public void PauseSettings()
     {
+        Invoke("OL", .1f);
+        TextManager.instance.OnLoad();
         Time.timeScale = 0;       
         isPaused = true;
         if (GameObject.FindObjectOfType<TSIController>() != null)
             GameObject.FindObjectOfType<TSIController>().GetComponent<TSIController>().enabled = false;
         if (GameObject.FindObjectOfType<TSIReflect>() != null)
             GameObject.FindObjectOfType<TSIReflect>().GetComponent<TSIReflect>().enabled = false;
+    }
+    void OL()
+    {
+        TextManager.instance.OnLoad();
     }
 }

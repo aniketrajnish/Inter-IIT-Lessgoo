@@ -52,6 +52,9 @@ TagManager:
   - name: WalkableFG
     uniqueID: 2914163941
     locked: 0
+  - name: Obstacles
+    uniqueID: 1695284333
+    locked: 0
   - name: Player
     uniqueID: 1333982365
     locked: 0

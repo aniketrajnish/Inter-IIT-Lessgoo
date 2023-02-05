@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour
 {
-    GameObject[] canvases;
+    public GameObject[] canvases;
     public static CanvasManager cmInstance;
     void Start()
     {
