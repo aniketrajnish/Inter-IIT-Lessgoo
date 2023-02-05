@@ -9,6 +9,7 @@ public class TSIReflect : MonoBehaviour
     Vector2 prevpos;
     Animator anim;
     ParticleSystem[] parts;
+    public bool hasWon, once;
 
     [Header("Assign These:")]
     public GameObject sprite;
@@ -53,8 +54,16 @@ public class TSIReflect : MonoBehaviour
         anim.speed = 1 / Time.timeScale;
 
         prevpos = rb.position;
+    }  
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Button")
+        {
+            if (once == false && GameObject.Find("Player").GetComponent<TSIController>().once == false)
+                collision.gameObject.GetComponent<Animator>().Play("New State");
+            hasWon = false;
+        }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "UI")
@@ -70,6 +79,17 @@ public class TSIReflect : MonoBehaviour
             }
             if (!source.isPlaying)
                 StartCoroutine(DisableAudioSource(source));
+        }
+        if (collision.gameObject.name == "Button")
+        {
+            collision.gameObject.GetComponent<Animator>().Play("ButtonPress");
+            GameObject.Find("Button").GetComponent<AudioSource>().Play();
+            if (!once)
+            {
+                hasWon = true;
+                if (GameObject.Find("Player").GetComponent<TSIController>().hasWon == true)                
+                    once = true;                
+            }
         }
     }
 

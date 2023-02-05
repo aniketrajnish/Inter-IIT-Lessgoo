@@ -9,8 +9,9 @@ public class TSIController : MonoBehaviour
     Vector2 prevpos;
     [HideInInspector] public bool isSlowMo;
     Animator anim;
-    ParticleSystem[] parts;   
+    ParticleSystem[] parts;
     bool isAudPlaying;
+    public bool once, hasWon;
 
     [Header("Assign These:")]
     public GameObject sprite;
@@ -91,12 +92,34 @@ public class TSIController : MonoBehaviour
             if (!source.isPlaying)           
                 StartCoroutine(DisableAudioSource(source)); 
         }
-    }
+        if (collision.gameObject.name == "Button")
+        {
+            collision.gameObject.GetComponent<Animator>().Play("ButtonPress");
+            GameObject.Find("Button").GetComponent<AudioSource>().Play();
+            if (!once)
+            {
+                hasWon = true;
 
+                if (GameObject.Find("Reflection").GetComponent<TSIReflect>().hasWon == true)                
+                    once = true;                
+            }
+
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Button")
+        {
+            if (once == false && GameObject.Find("Reflection").GetComponent<TSIReflect>().once == false)
+                collision.gameObject.GetComponent<Animator>().Play("New State");
+            hasWon = false;
+        }
+    }
     IEnumerator DisableAudioSource(AudioSource source)
     {
         source.Play();
         yield return new WaitForSecondsRealtime(source.clip.length);
         source.enabled = false;
     }
+
 }
