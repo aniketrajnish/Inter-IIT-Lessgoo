@@ -15,7 +15,8 @@ public class TSIController : MonoBehaviour
     [Header("Assign These:")]
     public GameObject sprite;
     public float rotSpeed, speed;
-    public static TSIController tsiInstance;   
+    public static TSIController tsiInstance;
+    //bool hasCollided;
 
     void Start()
     {
@@ -71,5 +72,22 @@ public class TSIController : MonoBehaviour
         anim.speed = 1 / Time.timeScale;
 
         prevpos = rb.position;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {        
+        if (collision.gameObject.tag == "UI")
+        {
+            AudioSource source = collision.gameObject.GetComponent<AudioSource>();
+            if (!source.isPlaying)           
+                StartCoroutine(DisableAudioSource(source)); 
+        }
+    }
+
+    IEnumerator DisableAudioSource(AudioSource source)
+    {
+        source.Play();
+        yield return new WaitForSecondsRealtime(source.clip.length);
+        source.enabled = false;
     }
 }
