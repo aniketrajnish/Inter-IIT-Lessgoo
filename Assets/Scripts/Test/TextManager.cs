@@ -9,16 +9,21 @@ public class TextManager : MonoBehaviour
     private List<bool> checker;
     [SerializeField] private TextMeshProUGUI[] excludedTexts;
     private List<GameObject> includedTextObjects;
-
+    public static TextManager instance;
     [SerializeField] private float extremeVal = 0.25f;
-    [SerializeField] private float angFreq = 3.14f; 
+    [SerializeField] private float angFreq = 3.14f;
 
     private void Awake()
     {
+        instance = this;
+        Invoke("OL", .1f);
+    }
+    public void OnLoad()
+    {
         texts = GameObject.FindObjectsOfType<TextMeshProUGUI>();
-        
+
         checker = new List<bool>();
-        for (int i = 0; i<texts.Length; ++i)
+        for (int i = 0; i < texts.Length; ++i)
         {
             checker.Add(true);
         }
@@ -27,6 +32,7 @@ public class TextManager : MonoBehaviour
         includedTextObjects = new List<GameObject>();
         CreateIncludedList();
     }
+ 
 
     private void Update()
     {
