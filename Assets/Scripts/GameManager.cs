@@ -95,4 +95,31 @@ public class GameManager : MonoBehaviour
     {
         TextManager.instance.OnLoad();
     }
+    public IEnumerator Death(GameObject go)
+    {
+        TSIController tsiC;
+        TSIReflect tsiR;
+        if (go.GetComponent<TSIController>() != null)
+        {
+            tsiC = go.GetComponent<TSIController>();
+            tsiC.dead = true;
+            tsiC.movement = Vector3.zero;
+            tsiC.bloodSplash.SetActive(true);
+        }
+        else if (go.GetComponent<TSIReflect>() != null)
+        {
+            tsiR = go.GetComponent<TSIReflect>();
+            tsiR.dead = true;
+            tsiR.movement = Vector3.zero;
+            tsiR.bloodSplash.SetActive(true);
+        }
+
+        Animator anim = go.GetComponentInChildren<Animator>();
+        anim.Play("New State");
+        anim.speed = 1 / Time.timeScale;
+
+        yield return new WaitForSecondsRealtime(.75f);
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }   
 }

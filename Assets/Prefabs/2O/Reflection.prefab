@@ -5074,7 +5074,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &2985946003279328696
 Rigidbody2D:
@@ -5109,9 +5109,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9864a671234722845bda2aae8ff71970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasWon: 0
+  movement: {x: 0, y: 0}
+  anim: {fileID: 7105153287349238904}
+  bloodAnim: {fileID: 4107821420252758452}
   once: 0
+  hasWon: 0
+  dead: 0
   sprite: {fileID: 6610553240056339111}
+  bloodSplash: {fileID: 5420339981956490273}
   rotSpeed: 12
   speed: 3
 --- !u!1 &2985946003874287839
