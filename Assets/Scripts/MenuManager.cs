@@ -29,7 +29,10 @@ public class MenuManager : MonoBehaviour
     }
     private void OnDisable()
     {
-        cams[0].transform.position = new Vector3(initX1, initY1, -10);
-        cams[1].transform.position = new Vector3(initX2, initY2, -10);
+        if (cams[0] != null && cams[1] != null)
+        {
+            cams[0].transform.position = new Vector3(initX1, initY1, -10);
+            cams[1].transform.position = new Vector3(initX2, initY2, -10);
+        }
     }
 }

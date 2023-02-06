@@ -5,16 +5,15 @@ using UnityEngine;
 public class TSIController : MonoBehaviour
 {
     Rigidbody2D rb;
-    Vector2 movement;
+    [HideInInspector] public Vector2 movement;
     Vector2 prevpos;
-    [HideInInspector] public bool isSlowMo;
-    Animator anim;
+    public Animator anim, bloodAnim;
     ParticleSystem[] parts;
     bool isAudPlaying;
-    public bool once, hasWon;
+    [HideInInspector] public bool once, hasWon, dead, isSlowMo;
 
     [Header("Assign These:")]
-    public GameObject sprite;
+    public GameObject sprite, bloodSplash;
     public float rotSpeed, speed;
     public static TSIController tsiInstance;
     //bool hasCollided;
@@ -24,10 +23,19 @@ public class TSIController : MonoBehaviour
         tsiInstance = this;
         rb = GetComponent<Rigidbody2D>();
         parts = GetComponentsInChildren<ParticleSystem>();
-        anim = GetComponentInChildren<Animator>();
         parts[0].Pause();
     }
     void Update()
+    {
+        anim.speed = 1 / Time.timeScale;
+        bloodAnim.speed = 1 / Time.timeScale;
+
+        if (!dead)
+            Move();
+        else
+            parts[0].Stop();
+    }
+    void Move()
     {
         movement = Vector2.zero;
 
@@ -36,7 +44,7 @@ public class TSIController : MonoBehaviour
 
         movement = new Vector2(movX, movY);
 
-        rb.MovePosition(rb.position + movement.normalized * speed * Time.deltaTime / Time.timeScale);        
+        rb.MovePosition(rb.position + movement.normalized * speed * Time.deltaTime / Time.timeScale);
 
         Vector2 movedir = rb.position - prevpos;
 
@@ -60,7 +68,7 @@ public class TSIController : MonoBehaviour
                 //AudioManager.amInstance.PlayAud("Footsteps", true);
             }
             isAudPlaying = true;
-            
+
         }
         else
         {
@@ -70,8 +78,6 @@ public class TSIController : MonoBehaviour
             //AudioManager.amInstance.GetComponent<AudioSource>().Stop();
             isAudPlaying = false;
         }
-
-        anim.speed = 1 / Time.timeScale;
 
         prevpos = rb.position;
     }
@@ -121,5 +127,11 @@ public class TSIController : MonoBehaviour
         yield return new WaitForSecondsRealtime(source.clip.length);
         source.enabled = false;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Death"))        
+            StartCoroutine(GameManager.instance.Death(this.gameObject));
+        
+    }    
 
 }

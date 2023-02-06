@@ -5,24 +5,34 @@ using UnityEngine;
 public class TSIReflect : MonoBehaviour
 {
     Rigidbody2D rb;
-    Vector2 movement;
+    [HideInInspector] public Vector2 movement;
     Vector2 prevpos;
-    Animator anim;
+    public Animator anim, bloodAnim;
     ParticleSystem[] parts;
-    public bool hasWon, once;
+    [HideInInspector] public bool once, hasWon, dead;
 
     [Header("Assign These:")]
-    public GameObject sprite;
+    public GameObject sprite, bloodSplash;
     public float rotSpeed, speed;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponentInChildren<Animator>();
+        Animator[] anims = GetComponentsInChildren<Animator>();
         parts = GetComponentsInChildren<ParticleSystem>();
         parts[0].Pause();
     }
     void Update()
+    {
+        anim.speed = 1 / Time.timeScale;
+        bloodAnim.speed = 1 / Time.timeScale;
+
+        if (!dead)
+            Move();
+        else
+            parts[0].Stop();
+    }
+    void Move()
     {
         movement = Vector2.zero;
 
@@ -51,10 +61,8 @@ public class TSIReflect : MonoBehaviour
             parts[0].Pause();
         }
 
-        anim.speed = 1 / Time.timeScale;
-
         prevpos = rb.position;
-    }  
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Button")
@@ -92,11 +100,16 @@ public class TSIReflect : MonoBehaviour
             }
         }
     }
-
     IEnumerator DisableAudioSource(AudioSource source)
     {
         source.Play();
         yield return new WaitForSecondsRealtime(source.clip.length);
         source.enabled = false;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Death"))
+            StartCoroutine(GameManager.instance.Death(this.gameObject));
+
     }
 }
