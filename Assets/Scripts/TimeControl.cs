@@ -28,6 +28,7 @@ public class TimeControl : MonoBehaviour
         originalVignetteScale = Vignettes[0].localScale;
         sloMoVignetteScale = originalVignetteScale;
         originalVignetteScale = scaleFactor * sloMoVignetteScale;
+        aud.volume = (float)System.Math.Pow(Time.timeScale, 1) * maxVol;
     }
 
     void PlayAud()
@@ -47,12 +48,13 @@ public class TimeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimeScaleController(TSIController.tsiInstance.isSlowMo);
+        if(TSIController.tsiInstance != null)
+            TimeScaleController(TSIController.tsiInstance.isSlowMo);
     }
     void TimeScaleController (bool _isSlowMo)
     {
         float time = (_isSlowMo) ? minTimeScale : 1f;
-        float lerpTime = (_isSlowMo) ? 2f : 5f;
+        float lerpTime = (_isSlowMo) ? 20f : 50f;
         float FOV = (_isSlowMo) ? SlowFOV : regularFOV;
         Vector3 scale = (_isSlowMo) ? sloMoVignetteScale : originalVignetteScale;
 
@@ -63,10 +65,10 @@ public class TimeControl : MonoBehaviour
         Time.fixedDeltaTime = Time.timeScale / 100;
         
         foreach (Camera cam in cams)
-            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, FOV, lerpTime * Time.unscaledDeltaTime);
+            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, FOV, lerpTime * Time.unscaledDeltaTime * .2f);
 
         foreach (Transform Vignette in Vignettes)
-            Vignette.localScale = Vector3.Lerp(Vignette.localScale, scale, lerpTime * Time.unscaledDeltaTime * 3f);
+            Vignette.localScale = Vector3.Lerp(Vignette.localScale, scale, lerpTime * Time.unscaledDeltaTime * .6f);
 
         aud.volume = (float)System.Math.Pow(Time.timeScale, 1) * maxVol;
         //print(Time.timeScale);

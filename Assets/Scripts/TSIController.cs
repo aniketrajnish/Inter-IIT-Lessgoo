@@ -9,13 +9,15 @@ public class TSIController : MonoBehaviour
     Vector2 prevpos;
     [HideInInspector] public bool isSlowMo;
     Animator anim;
-    ParticleSystem[] parts;   
+    ParticleSystem[] parts;
     bool isAudPlaying;
+    public bool once, hasWon, triggered;
 
     [Header("Assign These:")]
     public GameObject sprite;
     public float rotSpeed, speed;
-    public static TSIController tsiInstance;   
+    public static TSIController tsiInstance;
+    //bool hasCollided;
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class TSIController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         parts = GetComponentsInChildren<ParticleSystem>();
         anim = GetComponentInChildren<Animator>();
+        parts[0].Pause();
     }
     void Update()
     {
@@ -72,4 +75,69 @@ public class TSIController : MonoBehaviour
 
         prevpos = rb.position;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {        
+        if (collision.gameObject.tag == "UI")
+        {
+            AudioSource source;
+            if (collision.gameObject.GetComponent<AudioSource>() != null)
+            {
+                source = collision.gameObject.GetComponent<AudioSource>();
+            }
+            else
+            {
+                source = collision.GetComponentInParent<AudioSource>();
+            }
+            if (!source.isPlaying)           
+                StartCoroutine(DisableAudioSource(source)); 
+        }
+        if (collision.gameObject.name == "Button")
+        {
+            collision.gameObject.GetComponent<Animator>().Play("ButtonPress");
+            GameObject.Find("Button").GetComponent<AudioSource>().Play();
+            if (!once)
+            {
+                hasWon = true;
+
+                if (GameObject.Find("Reflection").GetComponent<TSIReflect>().hasWon == true)                
+                    once = true;                
+            }
+
+        }
+        if (collision.gameObject.tag == "LevelSwitch")
+        {
+            //play gate animation
+            triggered = true;
+            if(GameObject.Find("Reflection").GetComponent<TSIReflect>().triggered)
+            {
+                Debug.Log("Scene Switch");
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Button")
+        {
+            if (once == false && GameObject.Find("Reflection").GetComponent<TSIReflect>().once == false)
+                collision.gameObject.GetComponent<Animator>().Play("New State");
+            hasWon = false;
+        }
+
+        if (collision.gameObject.tag == "LevelSwitch")
+        {
+            //play gate close animation
+            triggered = false;
+        }
+    }
+
+
+
+    IEnumerator DisableAudioSource(AudioSource source)
+    {
+        source.Play();
+        yield return new WaitForSecondsRealtime(source.clip.length);
+        source.enabled = false;
+    }
+
 }

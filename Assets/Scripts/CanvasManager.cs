@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour
 {
-    GameObject[] canvases;
+    public GameObject[] canvases;
     public static CanvasManager cmInstance;
     void Start()
     {
@@ -40,10 +40,6 @@ public class CanvasManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Time.timeScale = 0;
-            FindCanvas("CanvasGame").SetActive(true);
-        }
+        
     }
 }
