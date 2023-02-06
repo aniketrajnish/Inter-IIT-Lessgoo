@@ -105,6 +105,8 @@ public class GameManager : MonoBehaviour
             tsiC.dead = true;
             tsiC.movement = Vector3.zero;
             tsiC.bloodSplash.SetActive(true);
+            tsiC.bloodSplash.transform.parent = null;
+            tsiC.sprite.GetComponent<SpriteRenderer>().enabled = false;
         }
         else if (go.GetComponent<TSIReflect>() != null)
         {
@@ -112,6 +114,8 @@ public class GameManager : MonoBehaviour
             tsiR.dead = true;
             tsiR.movement = Vector3.zero;
             tsiR.bloodSplash.SetActive(true);
+            tsiR.bloodSplash.transform.parent = null;
+            tsiR.sprite.GetComponent<SpriteRenderer>().enabled = false;
         }
 
         Animator anim = go.GetComponentInChildren<Animator>();

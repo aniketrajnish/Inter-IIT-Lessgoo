@@ -5191,6 +5191,8 @@ MonoBehaviour:
   hasWon: 0
   dead: 0
   isSlowMo: 0
+  buttonTrigger: 0
+  gateTrigger: 0
   sprite: {fileID: 2626859305984246260}
   bloodSplash: {fileID: 5018082352339919412}
   rotSpeed: 12
@@ -5430,7 +5432,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5018082352339919412}
   m_LocalRotation: {x: -0, y: -0, z: 0.30260742, w: 0.95311534}
-  m_LocalPosition: {x: 0.35000032, y: -2.8499987, z: 0}
+  m_LocalPosition: {x: -0.15, y: -0.45, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 2626859305984246257}
@@ -5473,8 +5475,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1380803355
-  m_SortingLayer: 3
+  m_SortingLayerID: 818927917
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 5447261018450215472, guid: b32caa4b4ced8184496995ceedbf5827,
     type: 3}
