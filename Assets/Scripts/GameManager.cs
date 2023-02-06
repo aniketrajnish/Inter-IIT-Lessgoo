@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         PauseSettings();
+        GetComponentInChildren<Light2D>().gameObject.SetActive(false);
     }
     public void Resume()
     {
