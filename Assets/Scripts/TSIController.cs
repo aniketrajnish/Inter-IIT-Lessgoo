@@ -10,7 +10,7 @@ public class TSIController : MonoBehaviour
     public Animator anim, bloodAnim;
     ParticleSystem[] parts;
     bool isAudPlaying;
-    [HideInInspector] public bool once, hasWon, dead, isSlowMo;
+    [HideInInspector] public bool once, hasWon, dead, isSlowMo, buttonTrigger, gateTrigger;
 
     [Header("Assign These:")]
     public GameObject sprite, bloodSplash;
@@ -102,24 +102,48 @@ public class TSIController : MonoBehaviour
         {
             collision.gameObject.GetComponent<Animator>().Play("ButtonPress");
             GameObject.Find("Button").GetComponent<AudioSource>().Play();
-            if (!once)
+            buttonTrigger = true;
+            if (GameObject.Find("Reflection").GetComponent<TSIReflect>().buttonTrigger)
             {
                 hasWon = true;
-
-                if (GameObject.Find("Reflection").GetComponent<TSIReflect>().hasWon == true)                
-                    once = true;                
             }
 
         }
+        if (collision.gameObject.tag == "LevelSwitch")
+        {
+            //play gate animation
+            gateTrigger = true;
+
+        }
+
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (GameObject.Find("Reflection").GetComponent<TSIReflect>().buttonTrigger)
+        {
+            hasWon = true;
+        }
+
+        if (GameObject.Find("Reflection").GetComponent<TSIReflect>().gateTrigger && hasWon)
+        {
+            collision.GetComponentInChildren<Animator>().Play("Gate_animation");
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Button")
         {
-            if (once == false && GameObject.Find("Reflection").GetComponent<TSIReflect>().once == false)
-                collision.gameObject.GetComponent<Animator>().Play("New State");
-            hasWon = false;
+            collision.gameObject.GetComponent<Animator>().Play("New State");
+            buttonTrigger = false;
         }
+
+        if (collision.gameObject.tag == "LevelSwitch")
+        {
+            //play gate close animation
+            gateTrigger = false;
+        }
+
     }
     IEnumerator DisableAudioSource(AudioSource source)
     {
