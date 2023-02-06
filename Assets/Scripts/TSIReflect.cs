@@ -9,7 +9,7 @@ public class TSIReflect : MonoBehaviour
     Vector2 prevpos;
     Animator anim;
     ParticleSystem[] parts;
-    public bool hasWon, once;
+    public bool hasWon, once, triggered;
 
     [Header("Assign These:")]
     public GameObject sprite;
@@ -63,6 +63,11 @@ public class TSIReflect : MonoBehaviour
                 collision.gameObject.GetComponent<Animator>().Play("New State");
             hasWon = false;
         }
+        if (collision.gameObject.tag == "LevelSwitch")
+        {
+            //play gate close animation
+            triggered = false;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -89,6 +94,15 @@ public class TSIReflect : MonoBehaviour
                 hasWon = true;
                 if (GameObject.Find("Player").GetComponent<TSIController>().hasWon == true)                
                     once = true;                
+            }
+        }
+        if (collision.gameObject.tag == "LevelSwitch")
+        {
+            //play gate animation
+            triggered = true;
+            if (GameObject.Find("Player").GetComponent<TSIController>().triggered)
+            {
+                Debug.Log("Scene Switch");
             }
         }
     }

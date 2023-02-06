@@ -11,7 +11,7 @@ public class TSIController : MonoBehaviour
     Animator anim;
     ParticleSystem[] parts;
     bool isAudPlaying;
-    public bool once, hasWon;
+    public bool once, hasWon, triggered;
 
     [Header("Assign These:")]
     public GameObject sprite;
@@ -105,6 +105,15 @@ public class TSIController : MonoBehaviour
             }
 
         }
+        if (collision.gameObject.tag == "LevelSwitch")
+        {
+            //play gate animation
+            triggered = true;
+            if(GameObject.Find("Reflection").GetComponent<TSIReflect>().triggered)
+            {
+                Debug.Log("Scene Switch");
+            }
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -114,7 +123,16 @@ public class TSIController : MonoBehaviour
                 collision.gameObject.GetComponent<Animator>().Play("New State");
             hasWon = false;
         }
+
+        if (collision.gameObject.tag == "LevelSwitch")
+        {
+            //play gate close animation
+            triggered = false;
+        }
     }
+
+
+
     IEnumerator DisableAudioSource(AudioSource source)
     {
         source.Play();
