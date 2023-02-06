@@ -5109,6 +5109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9864a671234722845bda2aae8ff71970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasWon: 0
+  once: 0
   sprite: {fileID: 6610553240056339111}
   rotSpeed: 12
   speed: 3
@@ -5159,7 +5161,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 1
   m_Color: {r: 0.759434, g: 0.9676161, b: 1, a: 1}
-  m_Intensity: 8
+  m_Intensity: 6
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 000000002dd9cf30c1db1fe1bb984de29df4824fe59cb2ad
   m_LightCookieSprite: {fileID: 0}
