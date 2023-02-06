@@ -66,7 +66,9 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && 
+            !CanvasManager.cmInstance.FindCanvas("CanvasMenu").activeSelf && 
+            GameObject.Find("CanvasLB") == null)
         {
             PauseSettings();
             CanvasManager.cmInstance.FindCanvas("CanvasGame").SetActive(true);
