@@ -57,13 +57,14 @@ public class GameManager : MonoBehaviour
     }
     public void SaveScore()
     {
+        int level = SceneManager.GetActiveScene().buildIndex;
         TMP_InputField pn = FindObjectOfType<TMP_InputField>();
 
-        int scoreCount = PlayerPrefs.GetInt("scoreCount", 0);
-        PlayerPrefs.SetInt("scoreCount", scoreCount + 1);
+        int scoreCount = PlayerPrefs.GetInt("scoreCount_" + level, 0);
+        PlayerPrefs.SetInt("scoreCount_" + level, scoreCount + 1);
 
-        PlayerPrefs.SetString("scoreName_" + scoreCount, pn.text);
-        PlayerPrefs.SetInt("scoreValue_" + scoreCount, LBScript.instance.AssignScore(LBScript.instance.timeElapsed));
+        PlayerPrefs.SetString("scoreName_" + level + "_" + scoreCount, pn.text);
+        PlayerPrefs.SetInt("scoreValue_" + level + "_" + scoreCount, LBScript.instance.AssignScore(LBScript.instance.timeElapsed));
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     private void Update()
