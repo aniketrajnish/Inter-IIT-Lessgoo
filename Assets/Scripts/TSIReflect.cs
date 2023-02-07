@@ -10,6 +10,7 @@ public class TSIReflect : MonoBehaviour
     public Animator anim, bloodAnim;
     ParticleSystem[] parts;
     [HideInInspector] public bool once, hasWon, dead, gateTrigger, buttonTrigger;
+    [SerializeField] private float fadeTime = 1f;
 
     [Header("Assign These:")]
     public GameObject sprite, bloodSplash;
@@ -69,7 +70,7 @@ public class TSIReflect : MonoBehaviour
         if (collision.gameObject.tag == "UI")
         {
             AudioSource source;
-            if(collision.gameObject.GetComponent<AudioSource>() != null)
+            if (collision.gameObject.GetComponent<AudioSource>() != null)
             {
                 source = collision.gameObject.GetComponent<AudioSource>();
             }
@@ -86,41 +87,56 @@ public class TSIReflect : MonoBehaviour
             collision.gameObject.GetComponent<Animator>().Play("ButtonPress");
             GameObject.Find("Button").GetComponent<AudioSource>().Play();
             buttonTrigger = true;
-
+            if (GameObject.Find("Player").GetComponent<TSIController>().buttonTrigger)
+            {
+                hasWon = true;
+            }
 
         }
         if (collision.gameObject.tag == "LevelSwitch")
         {
             //play gate animation
             gateTrigger = true;
-
+            if (hasWon)
+            {
+                collision.GetComponentInChildren<Animator>().Play("Gate_animation");
+                AudioManager.Instance.PlayAud("Door Open", false);
+                if (!once)
+                {
+                    SpriteRenderer sr = GameObject.Find("Trespass").GetComponent<SpriteRenderer>();
+                    StartCoroutine(FadeIn(sr, fadeTime));
+                    once = true;
+                    AudioManager.instance.PlayAud("trespassatownrisk", false);
+                }
+                Collider2D col = collision.GetComponentsInChildren<BoxCollider2D>()[1];
+                Debug.Log(col.gameObject.name);
+                col.isTrigger = true;
+            }
         }
 
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (GameObject.Find("Player").GetComponent<TSIController>().buttonTrigger)
+        if (collision.gameObject.name == "Button")
         {
-            hasWon = true;
+            if (GameObject.Find("Player").GetComponent<TSIController>().buttonTrigger)
+            {
+                hasWon = true;
+            }
         }
+        
 
-        if (GameObject.Find("Player").GetComponent<TSIController>().gateTrigger && hasWon)
-        {
-            collision.GetComponentInChildren<Animator>().Play("Gate_animation");
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Button")
         {
-            if (once == false && GameObject.Find("Player").GetComponent<TSIController>().once == false)
+            if (!hasWon)
+            {
                 collision.gameObject.GetComponent<Animator>().Play("New State");
-            hasWon = false;
-        }
-        if (collision.gameObject.name == "Button")
-        {
-            collision.gameObject.GetComponent<Animator>().Play("New State");
+            }
+
             buttonTrigger = false;
         }
         if (collision.gameObject.tag == "LevelSwitch")
@@ -141,5 +157,13 @@ public class TSIReflect : MonoBehaviour
         if (collision.gameObject.CompareTag("Death"))
             StartCoroutine(GameManager.instance.Death(this.gameObject));
 
+    }
+    IEnumerator FadeIn(SpriteRenderer sr, float t)
+    {
+        for (float i = 0; i < 1; i += .1f / t)
+        {
+            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, i);
+            yield return new WaitForSecondsRealtime(.1f);
+        }
     }
 }
