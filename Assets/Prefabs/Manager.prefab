@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 358790720294342947}
   - component: {fileID: 358790720294342946}
   - component: {fileID: 358790720294342945}
+  - component: {fileID: 185090855}
   m_Layer: 5
   m_Name: CanvasLB
   m_TagString: Untagged
@@ -101,6 +102,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &185090855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358790720294342944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bf599c05572ba438f1cf3689be7315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freq: 5
+  amp: 0.1
 --- !u!1 &358790720849531267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,6 +1702,7 @@ GameObject:
   - component: {fileID: 664025084650796684}
   - component: {fileID: 664025084650796685}
   - component: {fileID: 664025084650796686}
+  - component: {fileID: 1351758496}
   m_Layer: 5
   m_Name: CanvasScore
   m_TagString: Untagged
@@ -1776,6 +1792,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1351758496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664025084650796688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bf599c05572ba438f1cf3689be7315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freq: 5
+  amp: 0.1
 --- !u!1 &664025084689467251
 GameObject:
   m_ObjectHideFlags: 0
@@ -3985,6 +4015,7 @@ GameObject:
   - component: {fileID: 1841091929495013371}
   - component: {fileID: 1841091929495013370}
   - component: {fileID: 1841091929495013369}
+  - component: {fileID: 1726573221}
   m_Layer: 5
   m_Name: CanvasGame
   m_TagString: Untagged
@@ -4074,6 +4105,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1726573221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841091929495013368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bf599c05572ba438f1cf3689be7315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freq: 5
+  amp: 0.1
 --- !u!1 &1841091929595764448
 GameObject:
   m_ObjectHideFlags: 0
