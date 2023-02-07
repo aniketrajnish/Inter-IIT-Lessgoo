@@ -10,8 +10,9 @@ public class TSIController : MonoBehaviour
     public Animator anim, bloodAnim;
     ParticleSystem[] parts;
     bool isAudPlaying;
-    [HideInInspector] public bool once, hasWon, dead, isSlowMo, buttonTrigger, gateTrigger, endTrigger;
+    public bool once, hasWon, dead, isSlowMo, buttonTrigger, gateTrigger, endTrigger;
     [SerializeField] private float fadeTime = 1f;
+    [SerializeField] TSIReflect reflect;
 
     [Header("Assign These:")]
     public GameObject sprite, bloodSplash;
@@ -19,12 +20,12 @@ public class TSIController : MonoBehaviour
     public static TSIController tsiInstance;
     //bool hasCollided;
 
-    void Start()
+    void Awake()
     {
         tsiInstance = this;
         rb = GetComponent<Rigidbody2D>();
         parts = GetComponentsInChildren<ParticleSystem>();
-        parts[0].Pause();
+        parts[0].Stop();
     }
     void Update()
     {
@@ -104,13 +105,17 @@ public class TSIController : MonoBehaviour
             collision.gameObject.GetComponent<Animator>().Play("ButtonPress");
             if (!hasWon)
             {
-                GameObject.Find("Button").GetComponent<AudioSource>().Play();
+                AudioSource aud = GameObject.Find("Button").GetComponent<AudioSource>();
+                if (aud.isActiveAndEnabled)
+                    aud.Play();
             }
             buttonTrigger = true;
-            if (GameObject.Find("Reflection").GetComponent<TSIReflect>().buttonTrigger)
-            {
-                hasWon = true;
-            }
+
+            TSIReflect tsi = GameObject.Find("Reflection").GetComponent<TSIReflect>();
+
+            if (reflect.buttonTrigger)
+               hasWon = true;
+            
 
         }
         if (collision.gameObject.tag == "LevelSwitch")
@@ -122,7 +127,7 @@ public class TSIController : MonoBehaviour
                 Animator anim =  collision.GetComponentInChildren<Animator>();
                 anim.Play("Gate_animation");
                 anim.speed = 1 / Time.timeScale;
-                AudioManager.Instance.PlayAud("Door Open", false);
+                AudioManager.instance.PlayAud("Door Open", false);
                 if (!once)
                 {
                     SpriteRenderer sr = GameObject.Find("Bhangarh").GetComponent<SpriteRenderer>();
@@ -141,19 +146,13 @@ public class TSIController : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "Button")
-        {
-            if (GameObject.Find("Reflection").GetComponent<TSIReflect>().buttonTrigger)
-            {
-                hasWon = true;
-            }
-        }
+        if(reflect.buttonTrigger)
+            hasWon = true;
+        
         if (collision.gameObject.name == "EndCollider")
         {
-            if (GameObject.Find("Reflection").GetComponent<TSIReflect>().endTrigger)
-            {
-                Debug.Log("switch");
-            }
+            if (reflect.endTrigger)            
+                Debug.Log("switch");            
         }
     }
 
@@ -180,7 +179,9 @@ public class TSIController : MonoBehaviour
     }
     IEnumerator DisableAudioSource(AudioSource source)
     {
-        source.Play();
+        if (source.isActiveAndEnabled)
+            source.Play();
+
         yield return new WaitForSecondsRealtime(source.clip.length);
         source.enabled = false;
     }

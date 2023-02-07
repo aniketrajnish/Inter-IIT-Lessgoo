@@ -10,10 +10,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public bool levelFinished;
     public bool isPaused;
-    private void Start()
+    private void Awake()
     {
         instance = this;
         PauseSettings();
+        Time.timeScale = 1;
         GetComponentInChildren<Light2D>().gameObject.SetActive(false);
     }
     public void Resume()
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
             PauseSettings();
             CanvasManager.cmInstance.FindCanvas("CanvasGame").SetActive(true);
         }
+        print(Time.timeScale);
     }
     void PlaySettings()
     {

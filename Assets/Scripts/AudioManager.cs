@@ -12,9 +12,8 @@ public class AudioManager : MonoBehaviour
     {
         get { return instance; }
     }
-
     void Awake()
-    {   
+    {
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -26,7 +25,9 @@ public class AudioManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+        instance = this;
     }
+
     void Start()
     {
         aud = GetComponent<AudioSource>();
@@ -54,7 +55,6 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
-    // Update is called once per frame
     void Update()
     {
         PlayBtnAud();

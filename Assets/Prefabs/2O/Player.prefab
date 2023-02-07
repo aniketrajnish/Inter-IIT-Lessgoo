@@ -5193,7 +5193,9 @@ MonoBehaviour:
   isSlowMo: 0
   buttonTrigger: 0
   gateTrigger: 0
+  endTrigger: 0
   fadeTime: 2
+  reflect: {fileID: 0}
   sprite: {fileID: 2626859305984246260}
   bloodSplash: {fileID: 5018082352339919412}
   rotSpeed: 12
