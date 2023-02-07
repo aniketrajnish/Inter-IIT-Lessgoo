@@ -22052,6 +22052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leaderboardTextArray: []
+  btns: []
 --- !u!1 &3875420233949639874
 GameObject:
   m_ObjectHideFlags: 0
@@ -26965,12 +26966,12 @@ PrefabInstance:
     - target: {fileID: 2278140001061623786, guid: 2e827abaeb25eca41956dd4396d0caac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.07058
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2278140001061623786, guid: 2e827abaeb25eca41956dd4396d0caac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -36.31829
+      value: -30.7
       objectReference: {fileID: 0}
     - target: {fileID: 2278140001061623786, guid: 2e827abaeb25eca41956dd4396d0caac,
         type: 3}
