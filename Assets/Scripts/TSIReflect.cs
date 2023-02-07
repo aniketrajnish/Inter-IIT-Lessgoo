@@ -9,7 +9,7 @@ public class TSIReflect : MonoBehaviour
     Vector2 prevpos;
     public Animator anim, bloodAnim;
     ParticleSystem[] parts;
-    [HideInInspector] public bool once, hasWon, dead, gateTrigger, buttonTrigger;
+    [HideInInspector] public bool once, hasWon, dead, gateTrigger, buttonTrigger, endTrigger;
     [SerializeField] private float fadeTime = 1f;
 
     [Header("Assign These:")]
@@ -85,7 +85,10 @@ public class TSIReflect : MonoBehaviour
         if (collision.gameObject.name == "Button")
         {
             collision.gameObject.GetComponent<Animator>().Play("ButtonPress");
-            GameObject.Find("Button").GetComponent<AudioSource>().Play();
+            if (!hasWon)
+            {
+                GameObject.Find("Button").GetComponent<AudioSource>().Play();
+            }
             buttonTrigger = true;
             if (GameObject.Find("Player").GetComponent<TSIController>().buttonTrigger)
             {
@@ -99,7 +102,9 @@ public class TSIReflect : MonoBehaviour
             gateTrigger = true;
             if (hasWon)
             {
-                collision.GetComponentInChildren<Animator>().Play("Gate_animation");
+                Animator anim = collision.GetComponentInChildren<Animator>();
+                anim.Play("Gate_animation");
+                anim.speed = 1 / Time.timeScale;
                 AudioManager.Instance.PlayAud("Door Open", false);
                 if (!once)
                 {
@@ -113,7 +118,10 @@ public class TSIReflect : MonoBehaviour
                 col.isTrigger = true;
             }
         }
-
+        if (collision.gameObject.name == "EndCollider")
+        {
+            endTrigger = true;
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -124,7 +132,13 @@ public class TSIReflect : MonoBehaviour
                 hasWon = true;
             }
         }
-        
+        if (collision.gameObject.name == "EndCollider")
+        {
+            if (GameObject.Find("Player").GetComponent<TSIReflect>().endTrigger)
+            {
+                Debug.Log("switch");
+            }
+        }
 
     }
 
@@ -144,7 +158,10 @@ public class TSIReflect : MonoBehaviour
             //play gate close animation
             gateTrigger = false;
         }
-
+        if (collision.gameObject.name == "EndCollider")
+        {
+            endTrigger = false;
+        }
     }
     IEnumerator DisableAudioSource(AudioSource source)
     {

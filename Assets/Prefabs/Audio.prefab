@@ -48,6 +48,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: bb3f707d59f6548419a9e3947252c91e, type: 3}
   - {fileID: 8300000, guid: 873837c708cb3e44db7615a58cd4eac7, type: 3}
   - {fileID: 8300000, guid: 37b4ecefa2745ba4693784699a44a879, type: 3}
+  - {fileID: 8300000, guid: c094b22789e039948b74f77f42ec70db, type: 3}
+  - {fileID: 8300000, guid: b6458edd81e534b44b0131c9be8e52ba, type: 3}
+  - {fileID: 8300000, guid: 2f24e3635fd2ed14f965c6bd67f3f415, type: 3}
+  - {fileID: 8300000, guid: 695edc84be21a0245a3d2de77931c3bb, type: 3}
+  - {fileID: 8300000, guid: 70a96620237207d40bda29e79db72712, type: 3}
 --- !u!82 &8995094698632503970
 AudioSource:
   m_ObjectHideFlags: 0

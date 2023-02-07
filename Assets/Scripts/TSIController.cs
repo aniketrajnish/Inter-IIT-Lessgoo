@@ -10,7 +10,7 @@ public class TSIController : MonoBehaviour
     public Animator anim, bloodAnim;
     ParticleSystem[] parts;
     bool isAudPlaying;
-    [HideInInspector] public bool once, hasWon, dead, isSlowMo, buttonTrigger, gateTrigger;
+    [HideInInspector] public bool once, hasWon, dead, isSlowMo, buttonTrigger, gateTrigger, endTrigger;
     [SerializeField] private float fadeTime = 1f;
 
     [Header("Assign These:")]
@@ -102,7 +102,10 @@ public class TSIController : MonoBehaviour
         if (collision.gameObject.name == "Button")
         {
             collision.gameObject.GetComponent<Animator>().Play("ButtonPress");
-            GameObject.Find("Button").GetComponent<AudioSource>().Play();
+            if (!hasWon)
+            {
+                GameObject.Find("Button").GetComponent<AudioSource>().Play();
+            }
             buttonTrigger = true;
             if (GameObject.Find("Reflection").GetComponent<TSIReflect>().buttonTrigger)
             {
@@ -116,20 +119,25 @@ public class TSIController : MonoBehaviour
             gateTrigger = true;
             if (hasWon)
             {
-                collision.GetComponentInChildren<Animator>().Play("Gate_animation");
+                Animator anim =  collision.GetComponentInChildren<Animator>();
+                anim.Play("Gate_animation");
+                anim.speed = 1 / Time.timeScale;
                 AudioManager.Instance.PlayAud("Door Open", false);
                 if (!once)
                 {
-                    SpriteRenderer sr = GameObject.Find("Bhangarhfort").GetComponent<SpriteRenderer>();
+                    SpriteRenderer sr = GameObject.Find("Bhangarh").GetComponent<SpriteRenderer>();
                     StartCoroutine(FadeIn(sr, fadeTime));
                     once = true;
-                    AudioManager.instance.PlayAud("Bhangarhfort", false);
+                    AudioManager.instance.PlayAud("bhangarhfort", false);
                 }
                 Collider2D col = collision.GetComponentsInChildren<BoxCollider2D>()[1];
                 col.isTrigger = true;
             }
         }
-
+        if(collision.gameObject.name == "EndCollider")
+        {
+            endTrigger = true;
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -138,6 +146,13 @@ public class TSIController : MonoBehaviour
             if (GameObject.Find("Reflection").GetComponent<TSIReflect>().buttonTrigger)
             {
                 hasWon = true;
+            }
+        }
+        if (collision.gameObject.name == "EndCollider")
+        {
+            if (GameObject.Find("Reflection").GetComponent<TSIReflect>().endTrigger)
+            {
+                Debug.Log("switch");
             }
         }
     }
@@ -158,7 +173,10 @@ public class TSIController : MonoBehaviour
             //play gate close animation
             gateTrigger = false;
         }
-
+        if (collision.gameObject.name == "EndCollider")
+        {
+            endTrigger = false;
+        }
     }
     IEnumerator DisableAudioSource(AudioSource source)
     {
