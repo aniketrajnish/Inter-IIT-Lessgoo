@@ -5123,7 +5123,7 @@ MonoBehaviour:
   sprite: {fileID: 6610553240056339111}
   bloodSplash: {fileID: 5420339981956490273}
   rotSpeed: 12
-  speed: 3
+  speed: 6
 --- !u!1 &2985946003874287839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5312,7 +5312,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bf9331d9336de8141b483c5aec85198c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
