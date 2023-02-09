@@ -12,10 +12,14 @@ public class GameManager : MonoBehaviour
     public bool isPaused;
     private void Awake()
     {
+        //SceneManager.LoadScene(PlayerPrefs.GetInt("CurrLevel", 0));
         instance = this;
         PauseSettings();
         Time.timeScale = 1;
         GetComponentInChildren<Light2D>().gameObject.SetActive(false);
+    }
+    private void Start()
+    {
     }
     public void Resume()
     {
@@ -37,8 +41,8 @@ public class GameManager : MonoBehaviour
     public void ShowLeaderboard()
     {
         PauseSettings();
-        
-        
+
+
         foreach (GameObject canvas in CanvasManager.cmInstance.canvases)
             canvas.SetActive(false);
 
@@ -66,18 +70,19 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetString("scoreName_" + level + "_" + scoreCount, pn.text);
         PlayerPrefs.SetInt("scoreValue_" + level + "_" + scoreCount, LBScript.instance.AssignScore(LBScript.instance.timeElapsed));
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetInt("CurrLevel", level + 1);
+        SceneManager.LoadScene(PlayerPrefs.GetInt("CurrLevel",0));
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && 
-            !CanvasManager.cmInstance.FindCanvas("CanvasMenu").activeSelf && 
+        if (Input.GetKeyDown(KeyCode.Escape) &&
+            !CanvasManager.cmInstance.FindCanvas("CanvasMenu").activeSelf &&
             GameObject.Find("CanvasLB") == null)
         {
             PauseSettings();
             CanvasManager.cmInstance.FindCanvas("CanvasGame").SetActive(true);
         }
-        print(Time.timeScale);
+        //print(Time.timeScale);
     }
     void PlaySettings()
     {
@@ -91,7 +96,7 @@ public class GameManager : MonoBehaviour
     {
         Invoke("OL", .1f);
         TextManager.instance.OnLoad();
-        Time.timeScale = 0;       
+        Time.timeScale = 0;
         isPaused = true;
         if (GameObject.FindObjectOfType<TSIController>() != null)
             GameObject.FindObjectOfType<TSIController>().GetComponent<TSIController>().enabled = false;
@@ -132,5 +137,5 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(.75f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }   
+    }
 }

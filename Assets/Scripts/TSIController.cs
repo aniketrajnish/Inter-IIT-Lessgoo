@@ -139,8 +139,36 @@ public class TSIController : MonoBehaviour
                 col.isTrigger = true;
             }
         }
-        if(collision.gameObject.name == "EndCollider")
+
+        if (collision.gameObject.tag == "Level3Switch")
         {
+            gateTrigger = true;
+            if (hasWon)
+            {
+                Animator anim = collision.GetComponentInChildren<Animator>();
+                anim.Play("Gate_animation");
+                anim.speed = 1 / Time.timeScale;
+                AudioManager.instance.PlayAud("Door Open", false);
+                Collider2D col = collision.GetComponentsInChildren<BoxCollider2D>()[1];
+                col.isTrigger = true;
+            }
+        }
+
+        if (collision.gameObject.tag == "Level2Switch")
+        {
+                Animator anim = collision.GetComponentInChildren<Animator>();
+                anim.Play("Gate_animation");
+                anim.speed = 1 / Time.timeScale;
+                AudioManager.instance.PlayAud("Door Open", false);
+                Collider2D col = collision.GetComponentsInChildren<BoxCollider2D>()[1];
+                col.isTrigger = true;
+            
+        }
+        Debug.Log(collision.gameObject.name);
+
+        if (collision.gameObject.name == "EndCollider")
+        {
+            Debug.Log("print");
             endTrigger = true;
         }
     }
@@ -151,6 +179,7 @@ public class TSIController : MonoBehaviour
         
         if (collision.gameObject.name == "EndCollider")
         {
+            Debug.Log("print");
             if (reflect.endTrigger)            
                 Debug.Log("switch");            
         }
@@ -168,6 +197,11 @@ public class TSIController : MonoBehaviour
         }
 
         if (collision.gameObject.tag == "LevelSwitch")
+        {
+            //play gate close animation
+            gateTrigger = false;
+        }
+        if (collision.gameObject.tag == "Level3Switch")
         {
             //play gate close animation
             gateTrigger = false;

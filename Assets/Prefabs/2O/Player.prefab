@@ -5199,7 +5199,7 @@ MonoBehaviour:
   sprite: {fileID: 2626859305984246260}
   bloodSplash: {fileID: 5018082352339919412}
   rotSpeed: 12
-  speed: 6
+  speed: 3
 --- !u!1 &2626859306938091729
 GameObject:
   m_ObjectHideFlags: 0
