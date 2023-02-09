@@ -10,6 +10,7 @@ public class LBScript : MonoBehaviour
     float targetTime = 100;
     public bool scoreAssigned;
     public static LBScript instance;
+    string finTime;
     void Start()
     {
         timeElapsed = 0;
@@ -17,21 +18,28 @@ public class LBScript : MonoBehaviour
     }
     void Update()
     {
-        if (!GameManager.instance.isPaused)
+        /*print("levelFinished " + GameManager.instance.levelFinished);
+        print("isPaused " + GameManager.instance.isPaused);
+        print("scoreAssigned " + scoreAssigned);*/
+
+        print(timer.text);
+
+        if (!GameManager.instance.isPaused)        
+            Clock(timer);           
+        
+        if (!scoreAssigned && GameManager.instance.levelFinished)
         {
-            Clock(timer);
-            //print(timeElapsed);
-            if (!scoreAssigned && GameManager.instance.levelFinished)
-            {
-                GameManager.instance.PauseSettings();
-                int score = AssignScore(timeElapsed);
-                finalScore.text = "Score: " + score.ToString();
-                CanvasManager.cmInstance.FindCanvas("CanvasScore").SetActive(true);
-                time.text = "Time Elapsed: " + timer.text;
-                timer.gameObject.SetActive(false);
-                scoreAssigned = true;
-            }
+            print("XD");
+            GameManager.instance.PauseSettings();
+            int score = AssignScore(timeElapsed);
+            finalScore.text = "Score: " + score.ToString();
+            print("Final " + timer.text);
+            CanvasManager.cmInstance.FindCanvas("CanvasScore").SetActive(true);
+            time.text = "Time Elapsed: " + timer.text;
+            timer.gameObject.SetActive(false);
+            scoreAssigned = true;
         }
+        finTime = timer.text;
     }
     void Clock(TextMeshProUGUI _timer)
     {

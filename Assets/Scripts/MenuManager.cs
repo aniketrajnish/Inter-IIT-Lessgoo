@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
     Camera[] cams;
     float initX1, initY1, initX2, initY2;
     [SerializeField] float freq, amp;
-    void Start()
+    void Awake()
     {
         cams = GameObject.FindObjectsOfType<Camera>();
 
@@ -29,7 +29,7 @@ public class MenuManager : MonoBehaviour
     }
     private void OnDisable()
     {
-        if (cams[0] != null && cams[1] != null)
+        if (cams[0] != null && cams[1] != null && cams!=null)
         {
             cams[0].transform.position = new Vector3(initX1, initY1, -10);
             cams[1].transform.position = new Vector3(initX2, initY2, -10);

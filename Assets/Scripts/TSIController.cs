@@ -164,24 +164,28 @@ public class TSIController : MonoBehaviour
                 col.isTrigger = true;
             
         }
-        Debug.Log(collision.gameObject.name);
 
         if (collision.gameObject.name == "EndCollider")
         {
-            Debug.Log("print");
             endTrigger = true;
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(reflect.buttonTrigger)
-            hasWon = true;
+        if (collision.gameObject.name == "Button")
+        {
+            if (reflect.buttonTrigger)
+                hasWon = true;
+        }
+
         
         if (collision.gameObject.name == "EndCollider")
         {
-            Debug.Log("print");
-            if (reflect.endTrigger)            
-                Debug.Log("switch");            
+            if (reflect.endTrigger)
+            {
+                GameManager.instance.levelFinished = true;
+                GameManager.instance.ShowScore();
+            }
         }
     }
 

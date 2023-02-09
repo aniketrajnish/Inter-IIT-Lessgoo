@@ -12,14 +12,17 @@ public class GameManager : MonoBehaviour
     public bool isPaused;
     private void Awake()
     {
-        //SceneManager.LoadScene(PlayerPrefs.GetInt("CurrLevel", 0));
         instance = this;
         PauseSettings();
         Time.timeScale = 1;
         GetComponentInChildren<Light2D>().gameObject.SetActive(false);
     }
-    private void Start()
+   private void Start()
     {
+        int currLevel = PlayerPrefs.GetInt("CurrLevel", 0);
+        print(currLevel);
+        if (currLevel != SceneManager.GetActiveScene().buildIndex)        
+            SceneManager.LoadScene(currLevel);       
     }
     public void Resume()
     {
@@ -73,6 +76,11 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("CurrLevel", level + 1);
         SceneManager.LoadScene(PlayerPrefs.GetInt("CurrLevel",0));
     }
+    public void ShowScore()
+    {
+        PauseSettings();
+        CanvasManager.cmInstance.FindCanvas("CanvasScore").SetActive(true);
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) &&
@@ -83,6 +91,21 @@ public class GameManager : MonoBehaviour
             CanvasManager.cmInstance.FindCanvas("CanvasGame").SetActive(true);
         }
         //print(Time.timeScale);
+    }
+    public void  ResetGame()
+    {
+        PlayerPrefs.SetInt("CurrLevel", 0);
+        SceneManager.LoadScene(0);
+    }
+    public void FeelingLazy()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 3)
+            ResetGame();
+        else
+        {
+            PlayerPrefs.SetInt("CurrLevel", SceneManager.GetActiveScene().buildIndex+1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
     void PlaySettings()
     {

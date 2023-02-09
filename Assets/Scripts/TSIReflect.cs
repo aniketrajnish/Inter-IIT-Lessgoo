@@ -161,7 +161,10 @@ public class TSIReflect : MonoBehaviour
         if (collision.gameObject.name == "EndCollider")
         {
             if (controller.endTrigger)
-                Debug.Log("Switch");             
+            {
+                GameManager.instance.levelFinished = true;
+                GameManager.instance.ShowScore();
+            }
         }
     }
 
