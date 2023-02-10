@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LBDisplay : MonoBehaviour
 {
     public TextMeshProUGUI[] leaderboardTextArray;
-    private List<KeyValuePair<string, int>> scores = new List<KeyValuePair<string, int>>();
+    //private List<KeyValuePair<string, int>> scores = new List<KeyValuePair<string, int>>();
     public TextMeshProUGUI[] btns;
     private void Start()
     {
@@ -15,7 +15,8 @@ public class LBDisplay : MonoBehaviour
     }
     public void SetLB(int level)
     {
-        print(level);
+        List<KeyValuePair<string, int>> scores = new List<KeyValuePair<string, int>>();
+
         leaderboardTextArray = GetComponentsInChildren<TextMeshProUGUI>();
 
         for (int i = 0; i < leaderboardTextArray.Length; i++)

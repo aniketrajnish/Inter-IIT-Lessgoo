@@ -8,6 +8,8 @@ TagManager:
   - GameEnd
   - UI
   - LevelSwitch
+  - Level3Switch
+  - Level2Switch
   layers:
   - Default
   - TransparentFX

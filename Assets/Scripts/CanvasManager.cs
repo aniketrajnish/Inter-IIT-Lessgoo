@@ -13,7 +13,10 @@ public class CanvasManager : MonoBehaviour
         GetAllCanvases(canvases);
 
         foreach (GameObject canvas in canvases)
+        {
+            if (canvas != null)
             canvas.SetActive(false);
+        }
 
         FindCanvas("CanvasMenu").SetActive(true);
     }
