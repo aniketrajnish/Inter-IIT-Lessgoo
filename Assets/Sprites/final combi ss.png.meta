@@ -1,0 +1,660 @@
+fileFormatVersion: 2
+guid: ee12ad2e21fe08d4b8a116dd7f8ae095
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5991928874692022591
+    second: final combi ss_0
+  - first:
+      213: -6258255292621449518
+    second: final combi ss_1
+  - first:
+      213: -6693371100122995490
+    second: final combi ss_2
+  - first:
+      213: 1949117573861716487
+    second: final combi ss_3
+  - first:
+      213: -1620233253601139279
+    second: final combi ss_4
+  - first:
+      213: 2470130785189104611
+    second: final combi ss_5
+  - first:
+      213: -7191128019036637197
+    second: final combi ss_6
+  - first:
+      213: 7200469485573370605
+    second: final combi ss_7
+  - first:
+      213: -7403235746303591141
+    second: final combi ss_8
+  - first:
+      213: -1096052976202132060
+    second: final combi ss_9
+  - first:
+      213: -8077704100203432700
+    second: final combi ss_10
+  - first:
+      213: -4498923551908775076
+    second: final combi ss_11
+  - first:
+      213: -4432886934540308919
+    second: final combi ss_12
+  - first:
+      213: 4207102391982011591
+    second: final combi ss_13
+  - first:
+      213: 1333206498187328818
+    second: final combi ss_14
+  - first:
+      213: -2734855444906944118
+    second: final combi ss_15
+  - first:
+      213: 3413842814918012536
+    second: final combi ss_16
+  - first:
+      213: -2463745776560400200
+    second: final combi ss_17
+  - first:
+      213: -5822911828197387467
+    second: final combi ss_18
+  - first:
+      213: 2373638585325890079
+    second: final combi ss_19
+  - first:
+      213: 8883498726454566997
+    second: final combi ss_20
+  - first:
+      213: -6832399018180701730
+    second: final combi ss_21
+  - first:
+      213: 4984713583354657718
+    second: final combi ss_22
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: final combi ss_0
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 5051
+        width: 628
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce63906f6468dca0800000000000000
+      internalID: -5991928874692022591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_1
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 5051
+        width: 632
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6179118f53629a0800000000000000
+      internalID: -6258255292621449518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_2
+      rect:
+        serializedVersion: 2
+        x: 3432
+        y: 5051
+        width: 629
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4ad4b827e5c13a0800000000000000
+      internalID: -6693371100122995490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_3
+      rect:
+        serializedVersion: 2
+        x: 4900
+        y: 5051
+        width: 699
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702bf774b18ac0b10800000000000000
+      internalID: 1949117573861716487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_4
+      rect:
+        serializedVersion: 2
+        x: 6381
+        y: 5051
+        width: 738
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b524d1b076c389e0800000000000000
+      internalID: -1620233253601139279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_5
+      rect:
+        serializedVersion: 2
+        x: 7879
+        y: 5051
+        width: 743
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb04ff9cdaa74220800000000000000
+      internalID: 2470130785189104611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_6
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 3552
+        width: 703
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f776faba2bf33c90800000000000000
+      internalID: -7191128019036637197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_7
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 3552
+        width: 632
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2f3afe8d43de360800000000000000
+      internalID: 7200469485573370605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_8
+      rect:
+        serializedVersion: 2
+        x: 3437
+        y: 3552
+        width: 628
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1db911105c624990800000000000000
+      internalID: -7403235746303591141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_9
+      rect:
+        serializedVersion: 2
+        x: 4935
+        y: 3552
+        width: 628
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5567210a90ac0f0800000000000000
+      internalID: -1096052976202132060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_10
+      rect:
+        serializedVersion: 2
+        x: 6231
+        y: 3411
+        width: 1038
+        height: 721
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40578aa1bea36ef80800000000000000
+      internalID: -8077704100203432700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_11
+      rect:
+        serializedVersion: 2
+        x: 7730
+        y: 3411
+        width: 1037
+        height: 721
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5bb6d8addc9091c0800000000000000
+      internalID: -4498923551908775076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_12
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1785
+        width: 1239
+        height: 936
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e2149c1d83b72c0800000000000000
+      internalID: -4432886934540308919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_13
+      rect:
+        serializedVersion: 2
+        x: 1573
+        y: 1692
+        width: 1354
+        height: 1068
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c4b8c7d551a26a30800000000000000
+      internalID: 4207102391982011591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_14
+      rect:
+        serializedVersion: 2
+        x: 3045
+        y: 1631
+        width: 1411
+        height: 1151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23db2b81f30808210800000000000000
+      internalID: 1333206498187328818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_15
+      rect:
+        serializedVersion: 2
+        x: 4518
+        y: 1543
+        width: 1463
+        height: 1248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8957467677db0ad0800000000000000
+      internalID: -2734855444906944118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_16
+      rect:
+        serializedVersion: 2
+        x: 6143
+        y: 1751
+        width: 1238
+        height: 1115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e253ee3f7606f20800000000000000
+      internalID: 3413842814918012536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1279
+        height: 1481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b89f3b05440fcdd0800000000000000
+      internalID: -2463745776560400200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_18
+      rect:
+        serializedVersion: 2
+        x: 1433
+        y: 73
+        width: 1478
+        height: 1407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533dfd91b8cd03fa0800000000000000
+      internalID: -5822911828197387467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_19
+      rect:
+        serializedVersion: 2
+        x: 3119
+        y: 181
+        width: 1238
+        height: 1268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1aa28f97bbd0f020800000000000000
+      internalID: 2373638585325890079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_20
+      rect:
+        serializedVersion: 2
+        x: 4767
+        y: 173
+        width: 1052
+        height: 1176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 550a5f06607884b70800000000000000
+      internalID: 8883498726454566997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_21
+      rect:
+        serializedVersion: 2
+        x: 6151
+        y: 135
+        width: 1354
+        height: 1392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed19c95ea417e21a0800000000000000
+      internalID: -6832399018180701730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: final combi ss_22
+      rect:
+        serializedVersion: 2
+        x: 7621
+        y: 1735
+        width: 1214
+        height: 1137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb3bea08924d2540800000000000000
+      internalID: 4984713583354657718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
