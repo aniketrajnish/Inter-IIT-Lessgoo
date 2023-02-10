@@ -9,7 +9,7 @@ public class TSIReflect : MonoBehaviour
     Vector2 prevpos;
     public Animator anim, bloodAnim;
     ParticleSystem[] parts;
-     public bool once, hasWon, dead, gateTrigger, buttonTrigger, endTrigger;
+    [HideInInspector] public bool once, hasWon, dead, gateTrigger, buttonTrigger, endTrigger;
     [SerializeField] private float fadeTime = 1f;
     [SerializeField] TSIController controller;
 
@@ -121,32 +121,6 @@ public class TSIReflect : MonoBehaviour
                 col.isTrigger = true;
             }
         }
-
-        if (collision.gameObject.tag == "Level3Switch")
-        {
-            gateTrigger = true;
-            if (hasWon)
-            {
-                Animator anim = collision.GetComponentInChildren<Animator>();
-                anim.Play("Gate_animation");
-                anim.speed = 1 / Time.timeScale;
-                AudioManager.instance.PlayAud("Door Open", false);
-                Collider2D col = collision.GetComponentsInChildren<BoxCollider2D>()[1];
-                col.isTrigger = true;
-            }
-        }
-
-        if (collision.gameObject.tag == "Level2Switch")
-        {
-            Animator anim = collision.GetComponentInChildren<Animator>();
-            anim.Play("Gate_animation");
-            anim.speed = 1 / Time.timeScale;
-            AudioManager.instance.PlayAud("Door Open", false);
-            Collider2D col = collision.GetComponentsInChildren<BoxCollider2D>()[1];
-            col.isTrigger = true;
-
-        }
-
         if (collision.gameObject.name == "EndCollider")
         {
             endTrigger = true;
@@ -161,10 +135,7 @@ public class TSIReflect : MonoBehaviour
         if (collision.gameObject.name == "EndCollider")
         {
             if (controller.endTrigger)
-            {
-                GameManager.instance.levelFinished = true;
-                GameManager.instance.ShowScore();
-            }
+                Debug.Log("Switch");             
         }
     }
 
@@ -180,11 +151,6 @@ public class TSIReflect : MonoBehaviour
             buttonTrigger = false;
         }
         if (collision.gameObject.tag == "LevelSwitch")
-        {
-            //play gate close animation
-            gateTrigger = false;
-        }
-        if (collision.gameObject.tag == "Level3Switch")
         {
             //play gate close animation
             gateTrigger = false;

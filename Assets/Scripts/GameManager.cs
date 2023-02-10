@@ -8,22 +8,14 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public bool levelFinished, isPaused;
-    public GameObject credits;
+    public bool levelFinished;
+    public bool isPaused;
     private void Awake()
     {
-        Application.targetFrameRate = 60;
         instance = this;
         PauseSettings();
         Time.timeScale = 1;
         GetComponentInChildren<Light2D>().gameObject.SetActive(false);
-    }
-   private void Start()
-    {
-        int currLevel = PlayerPrefs.GetInt("CurrLevel", 0);
-        print(currLevel);
-        if (currLevel != SceneManager.GetActiveScene().buildIndex)        
-            SceneManager.LoadScene(currLevel);       
     }
     public void Resume()
     {
@@ -45,8 +37,8 @@ public class GameManager : MonoBehaviour
     public void ShowLeaderboard()
     {
         PauseSettings();
-
-
+        
+        
         foreach (GameObject canvas in CanvasManager.cmInstance.canvases)
             canvas.SetActive(false);
 
@@ -74,43 +66,21 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetString("scoreName_" + level + "_" + scoreCount, pn.text);
         PlayerPrefs.SetInt("scoreValue_" + level + "_" + scoreCount, LBScript.instance.AssignScore(LBScript.instance.timeElapsed));
-        PlayerPrefs.SetInt("CurrLevel", level + 1);
-        SceneManager.LoadScene(PlayerPrefs.GetInt("CurrLevel",0));
-    }
-    public void ShowScore()
-    {
-        PauseSettings();
-        CanvasManager.cmInstance.FindCanvas("CanvasScore").SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) &&
-            !CanvasManager.cmInstance.FindCanvas("CanvasMenu").activeSelf &&
+        if (Input.GetKeyDown(KeyCode.Escape) && 
+            !CanvasManager.cmInstance.FindCanvas("CanvasMenu").activeSelf && 
             GameObject.Find("CanvasLB") == null)
         {
             PauseSettings();
             CanvasManager.cmInstance.FindCanvas("CanvasGame").SetActive(true);
         }
-        //print(Time.timeScale);
-    }
-    public void  ResetGame()
-    {
-        PlayerPrefs.SetInt("CurrLevel", 0);
-        SceneManager.LoadScene(0);
-    }
-    public void FeelingLazy()
-    {
-        if (SceneManager.GetActiveScene().buildIndex == 3)
-            ResetGame();
-        else
-        {
-            PlayerPrefs.SetInt("CurrLevel", SceneManager.GetActiveScene().buildIndex+1);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        print(Time.timeScale);
     }
     void PlaySettings()
     {
-        credits.SetActive(false);
         Invoke("OL", .1f);
         isPaused = false;
         Time.timeScale = 1;
@@ -119,19 +89,14 @@ public class GameManager : MonoBehaviour
     }
     public void PauseSettings()
     {
-        credits.SetActive(false);
         Invoke("OL", .1f);
         TextManager.instance.OnLoad();
-        Time.timeScale = 0;
+        Time.timeScale = 0;       
         isPaused = true;
         if (GameObject.FindObjectOfType<TSIController>() != null)
             GameObject.FindObjectOfType<TSIController>().GetComponent<TSIController>().enabled = false;
         if (GameObject.FindObjectOfType<TSIReflect>() != null)
             GameObject.FindObjectOfType<TSIReflect>().GetComponent<TSIReflect>().enabled = false;
-    }
-    public void ShowCredits()
-    {
-        credits.SetActive(true);
     }
     void OL()
     {
@@ -167,5 +132,5 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(.75f);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    }   
 }
