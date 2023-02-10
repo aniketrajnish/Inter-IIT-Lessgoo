@@ -93,13 +93,9 @@ public class TSIReflect : MonoBehaviour
                     aud.Play();
             }
             buttonTrigger = true;
-
-            if (controller.buttonTrigger)
-            {
-                Debug.Log("enter");
+            
+            if(controller.buttonTrigger)
                 hasWon = true;
-            }
-                
 
 
         }
@@ -132,17 +128,10 @@ public class TSIReflect : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (controller.gameObject.name == "Button")
-        {
-            if (controller.buttonTrigger)
-            {
-                Debug.Log("stay");
-                hasWon = true;
-            }
-        }
-
-
-
+        if (controller.buttonTrigger)
+            hasWon = true;
+            
+        
         if (collision.gameObject.name == "EndCollider")
         {
             if (controller.endTrigger)
