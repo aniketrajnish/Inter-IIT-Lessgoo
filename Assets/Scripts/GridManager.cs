@@ -52,6 +52,8 @@ public class GridManager : MonoBehaviour
     [SerializeField] Camera playerCam;
     [SerializeField] Camera chamundaCam;
 
+    [SerializeField] GameObject board;
+
     [SerializeField] Vector3 Origin;
     private Vector3 pcamInitialpos;
     private Vector3 ccamInitialpos;
@@ -136,6 +138,7 @@ public class GridManager : MonoBehaviour
         InitializeRook();
         InitializeQueen();
         InitializeKing();
+        MakeChild();
     }
 
     void InitializePawn()
@@ -345,6 +348,35 @@ public class GridManager : MonoBehaviour
         }
         yield return new WaitForSecondsRealtime(0.0125f);
 
+    }
+
+    void MakeChild()
+    {
+
+        foreach (GameObject gameObject in Pawn)
+        {
+            gameObject.transform.parent = board.transform;
+        }
+        foreach (GameObject gameObject in Bishop)
+        {
+            gameObject.transform.parent = board.transform;
+        }
+        foreach (GameObject gameObject in Knight)
+        {
+            gameObject.transform.parent = board.transform;
+        }
+        foreach (GameObject gameObject in Rook)
+        {
+            gameObject.transform.parent = board.transform;
+        }
+        foreach (GameObject gameObject in Queen)
+        {
+            gameObject.transform.parent = board.transform;
+        }
+        foreach (GameObject gameObject in King)
+        {
+            gameObject.transform.parent = board.transform;
+        }
     }
 
     public void StartPlayer()
