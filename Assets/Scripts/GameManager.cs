@@ -8,10 +8,11 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public bool levelFinished;
-    public bool isPaused;
+    public bool levelFinished, isPaused;
+    public GameObject credits;
     private void Awake()
     {
+        Application.targetFrameRate = 60;
         instance = this;
         PauseSettings();
         Time.timeScale = 1;
@@ -109,6 +110,7 @@ public class GameManager : MonoBehaviour
     }
     void PlaySettings()
     {
+        credits.SetActive(false);
         Invoke("OL", .1f);
         isPaused = false;
         Time.timeScale = 1;
@@ -117,6 +119,7 @@ public class GameManager : MonoBehaviour
     }
     public void PauseSettings()
     {
+        credits.SetActive(false);
         Invoke("OL", .1f);
         TextManager.instance.OnLoad();
         Time.timeScale = 0;
@@ -125,6 +128,10 @@ public class GameManager : MonoBehaviour
             GameObject.FindObjectOfType<TSIController>().GetComponent<TSIController>().enabled = false;
         if (GameObject.FindObjectOfType<TSIReflect>() != null)
             GameObject.FindObjectOfType<TSIReflect>().GetComponent<TSIReflect>().enabled = false;
+    }
+    public void ShowCredits()
+    {
+        credits.SetActive(true);
     }
     void OL()
     {

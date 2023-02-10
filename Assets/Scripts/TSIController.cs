@@ -10,7 +10,7 @@ public class TSIController : MonoBehaviour
     public Animator anim, bloodAnim;
     ParticleSystem[] parts;
     bool isAudPlaying;
-    [HideInInspector] public bool once, hasWon, dead, isSlowMo, buttonTrigger, gateTrigger, endTrigger;
+     public bool once, hasWon, dead, isSlowMo, buttonTrigger, gateTrigger, endTrigger;
     [SerializeField] private float fadeTime = 1f;
     [SerializeField] TSIReflect reflect;
 
