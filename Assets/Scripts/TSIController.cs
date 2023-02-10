@@ -111,7 +111,6 @@ public class TSIController : MonoBehaviour
             }
             buttonTrigger = true;
 
-            TSIReflect tsi = GameObject.Find("Reflection").GetComponent<TSIReflect>();
 
             if (reflect.buttonTrigger)
                hasWon = true;
@@ -146,8 +145,12 @@ public class TSIController : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(reflect.buttonTrigger)
-            hasWon = true;
+        if (collision.gameObject.name == "Button")
+        {
+            if (reflect.buttonTrigger)
+                hasWon = true;
+        }
+
         
         if (collision.gameObject.name == "EndCollider")
         {
