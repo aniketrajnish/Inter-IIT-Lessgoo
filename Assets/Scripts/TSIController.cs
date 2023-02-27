@@ -10,7 +10,7 @@ public class TSIController : MonoBehaviour
     public Animator anim, bloodAnim;
     ParticleSystem[] parts;
     bool isAudPlaying;
-     public bool once, hasWon, dead, isSlowMo, buttonTrigger, gateTrigger, endTrigger;
+    [HideInInspector] public bool once, hasWon, dead, isSlowMo, buttonTrigger, gateTrigger, endTrigger;
     [SerializeField] private float fadeTime = 1f;
     [SerializeField] TSIReflect reflect;
 
@@ -111,7 +111,6 @@ public class TSIController : MonoBehaviour
             }
             buttonTrigger = true;
 
-            TSIReflect tsi = GameObject.Find("Reflection").GetComponent<TSIReflect>();
 
             if (reflect.buttonTrigger)
                hasWon = true;
@@ -139,33 +138,7 @@ public class TSIController : MonoBehaviour
                 col.isTrigger = true;
             }
         }
-
-        if (collision.gameObject.tag == "Level3Switch")
-        {
-            gateTrigger = true;
-            if (hasWon)
-            {
-                Animator anim = collision.GetComponentInChildren<Animator>();
-                anim.Play("Gate_animation");
-                anim.speed = 1 / Time.timeScale;
-                AudioManager.instance.PlayAud("Door Open", false);
-                Collider2D col = collision.GetComponentsInChildren<BoxCollider2D>()[1];
-                col.isTrigger = true;
-            }
-        }
-
-        if (collision.gameObject.tag == "Level2Switch")
-        {
-                Animator anim = collision.GetComponentInChildren<Animator>();
-                anim.Play("Gate_animation");
-                anim.speed = 1 / Time.timeScale;
-                AudioManager.instance.PlayAud("Door Open", false);
-                Collider2D col = collision.GetComponentsInChildren<BoxCollider2D>()[1];
-                col.isTrigger = true;
-            
-        }
-
-        if (collision.gameObject.name == "EndCollider")
+        if(collision.gameObject.name == "EndCollider")
         {
             endTrigger = true;
         }
@@ -181,11 +154,8 @@ public class TSIController : MonoBehaviour
         
         if (collision.gameObject.name == "EndCollider")
         {
-            if (reflect.endTrigger)
-            {
-                GameManager.instance.levelFinished = true;
-                GameManager.instance.ShowScore();
-            }
+            if (reflect.endTrigger)            
+                Debug.Log("switch");            
         }
     }
 
@@ -201,11 +171,6 @@ public class TSIController : MonoBehaviour
         }
 
         if (collision.gameObject.tag == "LevelSwitch")
-        {
-            //play gate close animation
-            gateTrigger = false;
-        }
-        if (collision.gameObject.tag == "Level3Switch")
         {
             //play gate close animation
             gateTrigger = false;

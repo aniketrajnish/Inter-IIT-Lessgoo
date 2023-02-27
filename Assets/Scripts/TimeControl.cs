@@ -54,7 +54,7 @@ public class TimeControl : MonoBehaviour
     void TimeScaleController (bool _isSlowMo)
     {
         float time = (_isSlowMo) ? minTimeScale : 1f;
-        float lerpTime = (_isSlowMo) ? 5f : 12.5f;
+        float lerpTime = (_isSlowMo) ? 20f : 50f;
         float FOV = (_isSlowMo) ? SlowFOV : regularFOV;
         Vector3 scale = (_isSlowMo) ? sloMoVignetteScale : originalVignetteScale;
 
@@ -65,12 +65,13 @@ public class TimeControl : MonoBehaviour
         Time.fixedDeltaTime = Time.timeScale / 100;
         
         foreach (Camera cam in cams)
-            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, FOV, lerpTime * Time.unscaledDeltaTime * .4f);
+            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, FOV, lerpTime * Time.unscaledDeltaTime * .2f);
 
         foreach (Transform Vignette in Vignettes)
-            Vignette.localScale = Vector3.Lerp(Vignette.localScale, scale, lerpTime * Time.unscaledDeltaTime);
+            Vignette.localScale = Vector3.Lerp(Vignette.localScale, scale, lerpTime * Time.unscaledDeltaTime * .6f);
 
         aud.volume = (float)System.Math.Pow(Time.timeScale, 1) * maxVol;
+        //print(Time.timeScale);
     }
     public IEnumerator Yeet(float time)
     {
