@@ -51,6 +51,8 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] Camera playerCam;
     [SerializeField] Camera chamundaCam;
+    [SerializeField] GameObject redLight;
+    [SerializeField] GameObject blueLight;
 
     [SerializeField] Vector3 Origin;
     private Vector3 pcamInitialpos;
@@ -356,7 +358,8 @@ public class GridManager : MonoBehaviour
     {
         yield return StartCoroutine(ZoomInCamera());
 
-        Destroy(light);
+        Destroy(redLight);
+        Destroy(blueLight);
 
         Destroy(Pawn[0, 4]);
         Destroy(Queen[1, 0]);
@@ -444,6 +447,8 @@ public class GridManager : MonoBehaviour
             GameObject gamoo = Instantiate(go, Pawn[0, 4].transform.position, Quaternion.identity);
             gamoo.transform.localScale = new Vector3(0.55f, 0.55f, 0.55f);
             Pawn[0, 4].GetComponent<SpriteRenderer>().enabled = false;
+            Animator animBlood = gamoo.GetComponent<Animator>();
+            animBlood.Play("BloodSplash");
             yield break;
         }   
     }
